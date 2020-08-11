@@ -1,0 +1,96 @@
+\documentclass[11pt]{jsarticle}
+
+\usepackage{SPR}
+
+\headerSPR
+\begin{document}
+	\titleSPR{\number\year}{\number\month}{\number\day}{D2}{吉田　皓太郎}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRabst
+		\begin{itemize}
+			\item 機械学習を用いたカップ形状の設計支援
+			\item 着後形状予測のためのカップの変形解析
+		\end{itemize}
+		
+		
+	\articleSPRobj
+		\begin{enumerate}
+			\item 定性的な機能要求を満たせるようなカップ形状を設計できる
+			\item 布の物性とカップのパターンがどのような結びつきを持っているかを調べることができる．
+		\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　1.前回からのノルマ
+	\articleSPRitemsone
+		%\begin{enumerate}
+		%	\item A
+		%\end{enumerate}
+		
+		\tableofcontents
+		
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%	\item 新規手法について
+%	\item ISFAアウトライン
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　2.具体的な成果
+	\articleSPRitemstwo
+	\renewcommand{\labelitemi}{$\blacktriangledown$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{投稿論文について}
+		修正お願いします．
+		
+	\section{研究進捗について}
+		\subsection{機械学習を用いた機能の定式化などについて}
+			今はデータ作成中（なんだかんだ500点近くはデータを生成できるかと・・・）．機械学習自体は正誤はともかく，プログラム自体は比較的容易に作成することは可能であるため，データを取ったタイミングで実行する．しかしながら，そのあとどのように問題を設定するかを決まってないので，（今週でなくても）議論できればと思います．（機械学習自体で機能の定量化を行うだけでは，新規性とインパクトに欠けるため）
+			また，機械学習の特徴量についてなのですが，SIIの前刷りで定式化した際，$ E,F,G,L,M,N $が次式らで表されることから，よく論文で書いている$ \omega_{\xi},\omega_{\eta},\omega_{\zeta},\alpha $を特徴量として読み込む方針の方がよいかもしれない．
+			\begin{eqnarray}
+				E &=& (\alpha'+\lambda)^2 t^2 -2\cos \alpha(\alpha'+\lambda) t + 1,\\
+				F &=& -\sin \alpha,\\
+				G &=& 1,
+			\end{eqnarray}
+			
+			\begin{eqnarray}
+				L &=& -\omega_{\xi}+t\{\lambda(-\omega_{\xi}\cos \alpha + \omega_{\zeta}\sin \alpha)+\omega_{\zeta}'\cos \alpha + \omega_{\xi}'\sin \alpha \},  \\
+				M &=& \omega_{\xi}\sin \alpha + \omega_{\zeta} \cos \alpha,  \\
+				N &=& 0. 
+			\end{eqnarray}
+			
+		\subsection{FEM解析のものについて}
+			先日の研究会にて，岩田先生にきちんとシステムの概形を考えるべきではと頂き，その通りであると感じたため，今回は一度，研究目的等を整理した内容を記します．
+			まず，設計における要求として，「丸みを持たせたい」という要求がある．紙模型のモデルから，この着用時にはじめて発現する「丸み」は，以下のようなステップで変換されていくと考えられる．
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.5]{./figure/round.png}
+				\caption{丸みと紙模型モデルとの関係性}
+			\end{figure}
+			まず，アイデアの一つとして，この流れを追っていき，ある丸みの設計評価と紙模型モデル（パターン形状）を定量的に結びつけることである．次に全体のシステムとして，二つのアイデアがある．
+			
+			一つは，丸みそのものの定量的評価を与えず，あるカップの変位分布がもうすでに与えられている場合において，紙模型の設計がどのように達成されるかを計算するものである．これをフロチャートにて示すと，以下のように示す．
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.5]{./figure/caseB.png}
+				\caption{システムフロチャート1}
+			\end{figure}
+		
+			もう一つは，設計評価が最終的に設計者が確認した際に決定し，ある部分を修正したい際にどのように修正すればよいかを提案するシステムである．これをフロチャートに示すと，以下のように表される．
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.5]{./figure/caseA.png}
+				\caption{システムフロチャート2}
+			\end{figure}
+			
+	%\input{./GaussProcess.tex}
+	\newpage
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　3.達成できなかったこととその問題点
+	%\articleSPRthree
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{14cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRfour
+	\articleSPRfive
+\end{document}
