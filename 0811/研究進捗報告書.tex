@@ -52,7 +52,25 @@
 			\end{figure}
 			機械学習におけるシステムの概要を文字に起こすと，次のようにまとめられる．
 			\begin{itemize}
-				\item 可展面データにおける$ \alpha $,$ \omega_{\eta} $,$ D $から，GPを用いてハイパーパラメータベクトル$ \bd{\theta}_{\alpha},\bd{\theta}_{\eta},\bd{\theta}_{D} $を抽出する．このベクトル$ \bd{\theta} = [\theta_1 \;\; \theta_2 \;\; \theta_3] $の各成分は，次式で示すRBF+Linearカーネル式中に現れる．
+				\item ガウス・ボネの原理より，第一基本量，第二基本量によって可展面の情報は一意に決定される．これらの基本量は次式に示す形によって表されている．したがって，この可展面情報を一意に決定する関数群$ \alpha $,$ \omega_{\eta} , \omega_{\xi}$,$ D $を機械学習によって学習することができればよい．（厳密には$ D $は式中には出てこないが，$ t $の定義域が$ [0,D(s)] $であることから，特徴的であるとしている）
+				\begin{eqnarray}
+				E &=& (\alpha'+\lambda)^2 t^2 -2\cos \alpha(\alpha'+\lambda) t + 1,\\
+				F &=& -\sin \alpha,\\
+				G &=& 1,
+				\end{eqnarray}
+				
+				\begin{eqnarray}
+				L &=& -\omega_{\xi}+t\{\lambda(-\omega_{\xi}\cos \alpha + \omega_{\zeta}\sin \alpha)+\omega_{\zeta}'\cos \alpha + \omega_{\xi}'\sin \alpha \},  \\
+				M &=& \omega_{\xi}\sin \alpha + \omega_{\zeta} \cos \alpha,  \\
+				N &=& 0. 
+				\end{eqnarray}
+				また，先週にも述べたように，$  \omega_{\eta} , \omega_{\xi} $とワイヤーの空間曲率$ \kappa (s) $の間には，以下の関係が存在すること，また，データにおける前提としてワイヤーデータはすべて同じものを使っているということから，$ \omega_{\xi} $は$ \omega_{\eta} $に関して従属的に決定できる．
+				\begin{equation}\label{eq:kappaeq}
+					\omega_{\eta}^2 + \omega_{\xi}^2 = \kappa^2
+				\end{equation}
+				このことから，$ \omega_{\xi} $は特徴量から除外でき，可展面を決定するのは関数群$ \alpha $,$ \omega_{\eta} $,$ D $の3つの関数である．
+				
+				\item 次に問題となるのが，この3つの関数をどのような特徴空間（パラメータ空間）$ S_p $へ射影するかである．その際，$ \dim{S_p} $をいかに小さくするかである．そこで，本研究では，可展面データにおける$ \alpha $,$ \omega_{\eta} $,$ D $を，GPを用いてハイパーパラメータベクトル$ \bd{\theta}_{\alpha},\bd{\theta}_{\eta},\bd{\theta}_{D} $を抽出することで，$ \dim{S_p} $を小さくしつつ，特徴空間へ射影できると考えた．このベクトル$ \bd{\theta} = [\theta_1 \;\; \theta_2 \;\; \theta_3] $の各成分は，次式で示すRBF+Linearカーネル式中に現れるパラメータである．
 				
 				\begin{equation}\label{eq:RBFLinear}
 					k(x_i,x_j) = \theta_1 \exp \left( -\frac{(x_i-x_j)^2}{\theta_2} \right) + \theta_3 x_i x_j
@@ -72,9 +90,9 @@
 				
 				\item 上記を用いて，入力パラメータを$ \bd{\theta}_{\alpha},\bd{\theta}_{\eta},\bd{\theta}_{D} $に対する出力を$ f $とし学習データを作成，$ f(\bd{\theta}_{\alpha},\bd{\theta}_{\eta},\bd{\theta}_{D}) $をGPを用いて回帰予測を行う．
 				
-				現在，学習データが1200個程度あり，これを
+				現在，学習データが1100個程度あり，これを
 				\begin{itemize}
-					\item 学習用データ 1000個
+					\item 学習用データ 900個
 					\item 検証用データ　200個
 				\end{itemize}
 			に分けて，実行したいと思っております．

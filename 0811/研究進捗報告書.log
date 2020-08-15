@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  11 AUG 2020 17:41
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  15 AUG 2020 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -403,38 +403,39 @@ File: ./figure/systems.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 55.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 55.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 65.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 65.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 65.
 [1
 
-] [2]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 97--99
+]
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 73.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 73.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 83.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 83.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 83.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 83.
+ [2] [3]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 115--117
 []
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 97--99
+Overfull \hbox (12.0pt too wide) in paragraph at lines 115--117
 [] 
  []
 
-[3] (./研究進捗報告書.aux) ) 
+[4] (./研究進捗報告書.aux) ) 
 Here is how much of TeX's memory you used:
- 4538 strings out of 492759
- 60870 string characters out of 6143227
- 143479 words of memory out of 5000000
- 8926 multiletter control sequences out of 15000+600000
+ 4539 strings out of 492759
+ 60882 string characters out of 6143227
+ 144479 words of memory out of 5000000
+ 8927 multiletter control sequences out of 15000+600000
  17592 words of font info for 79 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 53i,12n,50p,336b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,12n,50p,582b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 研究進捗報告書.dvi (3 pages, 7996 bytes).
+Output written on 研究進捗報告書.dvi (4 pages, 11784 bytes).
