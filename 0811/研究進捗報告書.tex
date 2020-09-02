@@ -70,7 +70,7 @@
 				\end{equation}
 				このことから，$ \omega_{\xi} $は特徴量から除外でき，可展面を決定するのは関数群$ \alpha $,$ \omega_{\eta} $,$ D $の3つの関数である．
 				
-				\item 次に問題となるのが，この3つの関数をどのような特徴空間（パラメータ空間）$ S_p $へ射影するかである．その際，$ \dim{S_p} $をいかに小さくするかである．そこで，本研究では，可展面データにおける$ \alpha $,$ \omega_{\eta} $,$ D $を，GPを用いてハイパーパラメータベクトル$ \bd{\theta}_{\alpha},\bd{\theta}_{\eta},\bd{\theta}_{D} $を抽出することで，$ \dim{S_p} $を小さくしつつ，特徴空間へ射影できると考えた．このベクトル$ \bd{\theta} = [\theta_1 \;\; \theta_2 \;\; \theta_3] $の各成分は，次式で示すRBF+Linearカーネル式中に現れるパラメータである．
+				\item 次に問題となるのが，この3つの関数をどのような特徴空間（パラメータ空間）$ S_p $へ，できるだけ$ \dim{S_p} $を小さくしつつ射影するかである．そこで，本研究では，可展面データにおける$ \alpha $,$ \omega_{\eta} $,$ D $を，GPを用いてハイパーパラメータベクトル$ \bd{\theta}_{\alpha},\bd{\theta}_{\eta},\bd{\theta}_{D} $を抽出することで，$ \dim{S_p} $を小さくしつつ，特徴空間へ射影できると考えた．このベクトル$ \bd{\theta} = [\theta_1 \;\; \theta_2 \;\; \theta_3] $の各成分は，次式で示すRBF+Linearカーネル式中に現れるパラメータである．
 				
 				\begin{equation}\label{eq:RBFLinear}
 					k(x_i,x_j) = \theta_1 \exp \left( -\frac{(x_i-x_j)^2}{\theta_2} \right) + \theta_3 x_i x_j
@@ -95,7 +95,7 @@
 					\item 学習用データ 900個
 					\item 検証用データ　200個
 				\end{itemize}
-			に分けて，実行したいと思っております．
+			に分けて，実行したいと思っております．現在，上記のプログラムを実行し，パラメータ化を行っている最中である．
 			\end{itemize}
 		\subsection{これからのTodo}
 			\begin{itemize}
