@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}研究進捗について}{1}%
+\contentsline {section}{\numberline {2}機械学習を用いたシステムの概要についての試行錯誤まとめ}{1}%
+\contentsline {subsection}{\numberline {2.1}入力まわりの概要}{2}%
+\contentsline {subsection}{\numberline {2.2}入力をなぜGPで表現したか}{2}%
+\contentsline {subsection}{\numberline {2.3}試行錯誤の過程で変えた点など}{3}%
+\contentsline {subsection}{\numberline {2.4}結果}{4}%
+\contentsline {subsection}{\numberline {2.5}これからのTodo}{5}%
