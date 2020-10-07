@@ -1,0 +1,94 @@
+\ProvidesPackage{SPR}
+\NeedsTeXFormat{LaTeX2e}
+
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage{subcaption}
+\usepackage{amsmath, amssymb}
+%\usepackage{newtxtext}
+\usepackage[top=20truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry}
+\usepackage{setspace}	%spacing環境（行間）
+\usepackage{fancyhdr}	%ヘッダ編集
+\usepackage{array}		%表の罫線を太くため
+\usepackage{here}		%図や表をその記述位置で出力[H]
+\usepackage{mymacros}
+\setlength{\arrayrulewidth}{1.5pt} 
+
+\newcommand{\titleSPR}[5]{
+	\begin{center}{\Large \textbf{研究進捗報告書}}\end{center}
+	\hspace{2zw}ミーティング日： #1 年 #2 月#3 日\hfill 学年 #4 \hspace{2zw} 氏名 #5 \hspace{2zw}\\
+	\begin{spacing}{0.6}
+	\noindent
+	\small{\textbf{注意：ミーティング時には、必ず本報告書を作成し、一部を教員に提出すると共に、
+	一部を自分用に持参して下さい。本報告書の提出がない場合、ミーティングは実施しません。
+	また、項目１）から項目３）について未記入の箇所がある場合にも、ミーティングは実施しません。
+	なお、本報告書は手書きでも構いません。}}
+	\end{spacing}\vspace{1zw}
+}
+\newcommand{\headerSPR}{
+	\thispagestyle{fancy}
+	\lhead{通算報告書番号：}
+	\rhead{フォーマット　ver.1}	
+}
+\newcommand{\articleSPRone}{
+	\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		１）前回から今回のミーティングまでの課題（ノルマ）を簡潔に記載して下さい．\\ \hline
+	\end{tabular}
+}
+\newcommand{\articleSPRtwo}{
+	\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		２）課題（ノルマ）のうち、達成できた項目を記載し、達成のために用いた手法と、具体的成果について、
+		簡潔に記述して下さい。\underline{データの羅列だけではなく、それにより何が分かったのかについてまとめて
+		下さい}（スペースが足りない場合は適宜資料（様式自由）を追加して提出して下さい）.\\ \hline
+	\end{tabular}
+}
+\newcommand{\articleSPRthree}{
+	\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		３）課題（ノルマ）のうち、達成できなかった項目を記載し、\underline{その具体的理由}
+		（直面した問題点）について簡潔に記載して下さい（スペースが足りない場合は適宜資料（様式自由）
+		を追加して提出して下さい）.\\ \hline
+	\end{tabular}
+}
+\newcommand{\articleSPRfour}{
+	\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		４）メモ欄（ミーティング中に記載）\\ \hline
+		\quad \vspace*{10zh}
+	\end{tabular}
+}
+\newcommand{\articleSPRfive}{
+	\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		５）次回のミーティングまでの課題（ノルマ）（ミーティング終了時に記載）
+		※学生、教員共に記載\\ \hline
+		\quad \vspace*{7zh}\\ \hline
+	\end{tabular}
+}
+\newcommand{\articleSPRabst}{
+\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		テーマの概要\\ \hline
+	\end{tabular}
+}
+\newcommand{\articleSPRobj}{
+\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		テーマの目的\\ \hline
+	\end{tabular}
+}
+\newcommand{\articleSPRitemsone}{
+	\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		今週のミーティング事項について　\\ \hline
+	\end{tabular}
+}
+%\newenviroment{articleSPRoneitemize}{\articleSPRitemsone \begin{enumerate}} {\end{enumerate} }
+\newcommand{\articleSPRitemstwo}{
+	\noindent
+	\begin{tabular}[c]{p{\textwidth}}\hline
+		ミーティング事項の具体的な内容について\\ \hline
+	\end{tabular}
+}
+

@@ -1,0 +1,127 @@
+\documentclass[11pt]{jsarticle}
+
+\usepackage{SPR}
+
+\headerSPR
+\begin{document}
+	\titleSPR{\number\year}{\number\month}{\number\day}{D2}{吉田　皓太郎}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRabst
+		\begin{itemize}
+			\item 機械学習を用いたカップ形状の設計支援
+			\item 着後形状予測のためのカップの変形解析
+		\end{itemize}
+		
+		
+	\articleSPRobj
+		\begin{enumerate}
+			\item 定性的な機能要求を満たせるようなカップ形状を設計できる
+			\item 布の物性とカップのパターンがどのような結びつきを持っているかを調べることができる．
+		\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　1.前回からのノルマ
+	\articleSPRitemsone
+		%\begin{enumerate}
+		%	\item A
+		%\end{enumerate}
+		
+		\tableofcontents
+		
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%	\item 新規手法について
+%	\item ISFAアウトライン
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　2.具体的な成果
+	\articleSPRitemstwo
+	\renewcommand{\labelitemi}{$\blacktriangledown$}
+	\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+	\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{研究進捗について}
+		先週の研究成果等について報告いたします．
+		\begin{itemize}
+			\item システムの概観について
+			\item これからのTodo
+		\end{itemize}
+	\section{システムの概観について}
+		\subsection{概観}
+			ここでは，機械学習の理論を発展させ，ある機能の値$ f_v $が与えられた場合における，形状導出手法について説明します．この場合，単純な最適化であれば，最適化する関数群からハイパーパラメータを抽出し，それが$ f_v $になるまで最適化する方法がある．しかし，これでは計算時間が膨大になるため，この問題の解法を手順に分解すると次のようになる．
+			\begin{enumerate}
+				\item 事後分布式$ \mu(\bd{\theta}_*) = \bd{k}(\bd{\theta}_*)\bd{K}^{-1}\bd{y} $を用いて$ \mu(\bd{\theta}_*) = f_v $を数値的に解く．数値解法には二分法などの他，解析的に微分可能で計算できるため，ニュートンラフソン法などの解法も適用可能である．\label{enu:a1}
+				\item 求めた$ \bd{\theta}_* =[\bd{\theta}_{\alpha},\; \bd{\theta}_{\omega_{\eta}},\; \bd{\theta}_{D}]$は，以下の3つの最適化問題の解であるから，これを出力データセット$ \bd{y} $に対する最適化問題と捉えて解く．\label{enu:a2}
+				\begin{equation}\label{eq:Suudo1}
+				\theta_{\alpha} =\argmax_{\theta_{\alpha}} \left[-\log|\bd{K}_{\theta_{\alpha}}| - \bd{y}_{\alpha}^T \bd{K}_{\theta_{\alpha}}^{-1} \bd{y}_{\alpha}+C \right] 
+				\end{equation}
+				
+				\begin{equation}\label{eq:Suudo2}
+				\theta_{\omega_{\eta}} =\argmax_{\theta_{\omega_{\eta}}} \left[-\log|\bd{K}_{\theta_{\omega_{\eta}}}| - \bd{y}_{\omega_{\eta}}^T \bd{K}_{\theta_{\omega_{\eta}}}^{-1} \bd{y}_{\omega_{\eta}} + C \right] 
+				\end{equation}
+				
+				\begin{equation}\label{eq:Suudo3}
+				\theta_{D} =\argmax_{\theta_{D}} \left[-\log|\bd{K}_{\theta_{D}}| - \bd{y}_{D}^T \bd{K}_{\theta_{D}}^{-1} \bd{y}_{D}+C \right] 
+				\end{equation}
+				
+				\item　得られたデータセットから関数を回帰し（微分等しなければする必要はないが），形状を導出する．\label{enu:a3}
+			\end{enumerate}
+			ざっぱな解法について説明する．ここでは，事後分布式における$ \bd{K}^{-1}\bd{y} $が事後分布の入力$ \theta_* $に対して定数であることから，求めたい関数群$ \alpha,\omega_{\eta},D $をカーネル関数の有限和によって表現する．（この形を取ると，再生核ヒルベルト空間における式と同じになるため，何か理論的裏付けが得られないかも検討できる）
+			\begin{equation}\label{eq:alpha_eq}
+				\alpha(s) = \sum_{i=0}^{n-1} a_{\alpha,i} k(s,s_i) = \bd{a}_{\alpha} \cdot \bd{k}(s)
+			\end{equation}
+			\begin{equation}\label{eq:omgEta_eq}
+			\alpha(s) = \sum_{i=0}^{n-1} a_{\omega_{\eta},i} k(s,s_i) = \bd{a}_{\omega_{\eta}} \cdot \bd{k}(s)
+			\end{equation}
+			\begin{equation}\label{eq:Dist_eq}
+			\alpha(s) = \sum_{i=0}^{n-1} a_{D,i} k(s,s_i) = \bd{a}_{D} \cdot \bd{k}(s)
+			\end{equation}
+			以降では，学習総数$ N $に対し，$ n-1<N $の場合について考える．まず，(\ref{eq:Suudo1})~(\ref{eq:Suudo3})は，パラメータ$ \theta_{\alpha} $に関する極値条件によって，パラメータ$ \bd{a} $に関する制約条件として表現可能である．このようにあらかじめ表現してやることで，データセットが0となることを避けることができる．
+			
+			\begin{equation}\label{eq:alpha_const1}
+				-\partdf{}{\bd{\theta}_{\alpha}}\log|\det \bd{K}_{\theta_{\alpha}}| - \av^T \partdf{}{\bd{\theta}_{\alpha}} \tilde{\bd{K}}_{\theta_{\alpha}} \av = \bd{0}
+			\end{equation}
+			ただし，$ \tilde{\bd{K}}_{\theta_{D}} $は圧縮したカーネル行列であることに注意する．\Eqref{eq:alpha_eq}を離散化し，そのデータセットを$ \Av $とおくと，，
+			\begin{equation}
+				\Av = \av \left[\begin{array}{ccccc}
+					\bd{k}(s_0) & \bd{k}(s_1) & \cdots & \bd{k}(s_i) & \bd{k}(s_N)
+				\end{array} \right]= \av \cdot \bd{E}
+			\end{equation}
+			となる．これを用いて圧縮したカーネル行列は
+			\begin{equation}\label{eq:Kernel2}
+				\tilde{\bd{K}}_{\theta_{\alpha}} =  \bd{E}^T \bd{K}_{\theta_{\alpha}}^{-1} \bd{E}
+			\end{equation}
+			と表現している．
+			次に，得られた$ \alpha,\omega_{\eta},D $における，形状の復元とその制約条件について述べる．ここでは，ワイヤーの空間曲率$ \kappa $は訓練データと同じものを用いる場合を考える．この場合，$ \omega_{\xi} =\sqrt{\kappa^2-\omega_{\eta}^2}$であり，$ \omega_{\zeta}=-\omega_{\xi} \tan \alpha $より，初期姿勢とともに微分方程式を解くことで空間曲線を得る．その空間曲線がワイヤー曲線と接線方向を含めて一致させる制約が必要である．さらに可展面の接平面条件を解くと$ \bd{\zeta}_{LW} \times \bd{\eta} $が得られるため，これも制約として加える．
+			
+			さらに，母線が交差しない条件として，以下の条件が与えられる．
+			\begin{equation}\label{eq:D_ineq}
+				D<\frac{\cos \alpha}{\alpha'+\omega_{\eta}}
+			\end{equation}
+			この接線方向が一致するという制約条件を目的関数として捉えるか，あるいは別の評価関数（例えば曲げエネルギーの最小化）とするか，といった感じに帰結できると思われます．
+			\subsection{まとめ}
+				以上をまとめると，以下のような単一目的？な最適化問題に帰結できるのではと考えます．
+				\begin{eqnarray}
+					\min \;\; &&f(\bd{a}) = \int_{0}^{L} (\zetav_{LW} \cdot \zetav -1 )^2 + (\etav \cdot \zetav_{LW})^2 ds \;\; \mathrm{or} \;\; U(\bd{a})\; \mathrm{etc...} \\
+					 \mathrm{s.t.} \;\;&& -\partdf{}{\bd{\theta}_{j}}\log|\det \bd{K}_{\theta_{j}}| - \av_j^T \partdf{}{\bd{\theta}_{j}} \tilde{\bd{K}}_{\theta_{j}} \av_j \;\; \forall j \in [\alpha,\omega_{\eta},D] \\
+					 && D<\frac{\cos \alpha}{\alpha'+\omega_{\eta}} \;\; \forall s \in [0,L]
+				\end{eqnarray}
+				設計変数は$ \av_j$に加え，初期姿勢$ \zetav_0,\xiv_0,\etav_0 $だが，$ \zetav_0 = \zetav_{LW}(0) $と一致させればよいため，$ \xiv_0,\etav_0 $が正規直交基底の制約を満たしつつ表現されればよい．
+	\section{これからのTodo}
+			\begin{itemize}
+				\item 制約条件，目的関数の洗い出し
+			\end{itemize}
+			
+	\newpage
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　3.達成できなかったこととその問題点
+	%\articleSPRthree
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{14cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRfour
+	\articleSPRfive
+\end{document}
