@@ -1,0 +1,93 @@
+\documentclass[11pt]{jsarticle}
+
+\usepackage{SPR}
+
+\headerSPR
+\begin{document}
+	\titleSPR{\number\year}{\number\month}{\number\day}{D2}{吉田　皓太郎}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRabst
+		\begin{itemize}
+			\item 機械学習を用いたカップ形状の設計支援
+			\item 着後形状予測のためのカップの変形解析
+		\end{itemize}
+		
+		
+	\articleSPRobj
+		\begin{enumerate}
+			\item 定性的な機能要求を満たせるようなカップ形状を設計できる
+			\item 布の物性とカップのパターンがどのような結びつきを持っているかを調べることができる．
+		\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　1.前回からのノルマ
+	\articleSPRitemsone
+		%\begin{enumerate}
+		%	\item A
+		%\end{enumerate}
+		
+		\tableofcontents
+		
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%	\item 新規手法について
+%	\item ISFAアウトライン
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　2.具体的な成果
+	\articleSPRitemstwo
+	\renewcommand{\labelitemi}{$\blacktriangledown$}
+	%\renewcommand{\labelitemi}{$\bigcirc$}
+	\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+	\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{研究進捗について}
+		\begin{itemize}
+			\item ねんどで作成いたしましたので，こちらを計測に回します．（メール予定）
+			\item 色々ありPythonで組みなおしたものの，ScipyのNelder-meadは変化が遅く，また，目的関数の計算時間が単位あたり0.3秒ほどかかることもあり，収束にいたるまで時間がかかっております．
+			
+			また，Scipyの仕様がよくわからずPowell法でエラーを吐くなどがあることから，現在調査中です．
+			\item 定式化の変更
+			
+			以下の最適化問題
+			\begin{eqnarray}
+				\min \;\; &&f(\bd{a}) = \int_{0}^{L} (\zetav_{LW} \cdot \zetav -1 )^2 + (\xiv \cdot \zetav_{LW}' - \omega_{\eta})^2 ds  \\
+				\mathrm{s.t.} \;\;&& -\partdf{}{\bd{\theta}_{j}}\log|\det \bd{K}_{\theta_{j}}| - \av_j^T \partdf{}{\bd{\theta}_{j}} \tilde{\bd{K}}_{\theta_{j}} \av_j \;\; \forall j \in [\alpha,\omega_{\eta},D] \\
+				&& D<\frac{\cos \alpha}{\alpha'+\omega_{\eta}} \;\; \forall s \in [0,L]
+			\end{eqnarray}
+			について再考いたしますと，目的関数に母線長ベクトル$ D $が影響しないことから，制約から切り離して考えることができます．
+			さらに，$ \alpha,\omega_{\eta} $の間には，ワイヤーの空間曲率$ \kappa $を用いて関係式
+			\begin{equation}\label{eq:omgEta_and_alpha}
+				\tan \alpha = \frac{\omega_{\eta}' \kappa - \omega_{\eta} \kappa'}{\kappa (\kappa^2 - \omega_{\eta}^2)}
+			\end{equation}
+			の関係式が成り立っており，さらに，$ -\kappa \leq \omega_{\eta} \leq \kappa $の関係式が成り立っています．
+			
+			このとき，$ \omega_{\eta} $を適当な関数$ -1 \leq f(s)  \leq 1$を用いて，次のように表します．
+			\begin{equation}\label{eq:feq}
+				\omega_{\eta} = \kappa f
+			\end{equation}
+			これを\req{eq:omgEta_and_alpha}に代入し，整理すると以下の微分方程式を得ます．
+			\begin{equation}\label{eq:f_ode}
+				\frac{f'}{1-f^2} = \kappa \tan \alpha
+			\end{equation}
+			この方程式は変数分離型の微分方程式であるため解析的に求められることが期待できます．$ F(s) = \int_{0}^{s} 2 \kappa \tan \alpha ds$とおけば，$ f $は
+			\begin{equation}\label{eq:f_solve}
+				f = \frac{1-\exp F}{1+\exp F}
+			\end{equation}
+			と表すことができ，結局最適化する変数は$ \alpha $のみでよいことが分かります．
+		\end{itemize}
+	\section{次回について}
+		
+	\newpage
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　3.達成できなかったこととその問題点
+	%\articleSPRthree
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{14cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRfour
+	\articleSPRfive
+\end{document}

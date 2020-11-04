@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.10.10)  3 NOV 2020 15:52
+This is e-pTeX, Version 3.14159265-p3.8.3-191112-2.6 (utf8.sjis) (TeX Live 2020/W32TeX) (preloaded format=platex 2020.10.10)  4 NOV 2020 08:46
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -388,34 +388,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--44
 
  []
 
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 50.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 50.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 50.
+(Font)              scaled to size 6.72699pt on input line 54.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 54.
 [1
 
-]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 69--71
+] [2]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 87--89
 []
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 69--71
+Overfull \hbox (12.0pt too wide) in paragraph at lines 87--89
 [] 
  []
 
-[2] (./研究進捗報告書.aux) ) 
+[3] (./研究進捗報告書.aux) ) 
 Here is how much of TeX's memory you used:
- 4808 strings out of 480388
- 69766 string characters out of 5891920
- 360793 words of memory out of 5000000
- 21546 multiletter control sequences out of 15000+600000
- 545575 words of font info for 79 fonts, out of 8000000 for 9000
+ 4825 strings out of 480388
+ 69954 string characters out of 5891920
+ 365793 words of memory out of 5000000
+ 21555 multiletter control sequences out of 15000+600000
+ 548208 words of font info for 89 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 72i,11n,79p,316b,331s stack positions out of 5000i,500n,10000p,500000b,80000s
+ 72i,12n,79p,316b,401s stack positions out of 5000i,500n,10000p,500000b,80000s
 
-Output written on 研究進捗報告書.dvi (2 pages, 5280 bytes).
+Output written on 研究進捗報告書.dvi (3 pages, 7540 bytes).
