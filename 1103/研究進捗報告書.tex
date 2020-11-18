@@ -45,14 +45,14 @@
 		\begin{itemize}
 			\item ねんどで作成いたしましたので，こちらを計測に回します．（メール予定）
 			\item 色々ありPythonで組みなおしたものの，ScipyのNelder-meadは変化が遅く，また，目的関数の計算時間が単位あたり0.3秒ほどかかることもあり，収束にいたるまで時間がかかっております．
-			
+			\item また，さらに問題点として，次の式で示す逆行列がなぜか計算できない（行列式が０）になるといった問題があります．
 			また，Scipyの仕様がよくわからずPowell法でエラーを吐くなどがあることから，現在調査中です．
 			\item 定式化の変更
 			
 			以下の最適化問題
 			\begin{eqnarray}
 				\min \;\; &&f(\bd{a}) = \int_{0}^{L} (\zetav_{LW} \cdot \zetav -1 )^2 + (\xiv \cdot \zetav_{LW}' - \omega_{\eta})^2 ds  \\
-				\mathrm{s.t.} \;\;&& -\partdf{}{\bd{\theta}_{j}}\log|\det \bd{K}_{\theta_{j}}| - \av_j^T \partdf{}{\bd{\theta}_{j}} \tilde{\bd{K}}_{\theta_{j}} \av_j \;\; \forall j \in [\alpha,\omega_{\eta},D] \\
+				\mathrm{s.t.} \;\;&& -\mathrm{Tr}\left( \bd{K}^{-1} \partdf{\bd{K}}{\bd{\theta}_{j}} \right) + (\bd{K}^{-1} \bd{a}_j)^T \partdf{\bd{K}}{\bd{\theta}_{j}} (\bd{K}^{-1} \bd{a}_j) = 0\;\; \forall j \in [\alpha,\omega_{\eta},D] \\
 				&& D<\frac{\cos \alpha}{\alpha'+\omega_{\eta}} \;\; \forall s \in [0,L]
 			\end{eqnarray}
 			について再考いたしますと，目的関数に母線長ベクトル$ D $が影響しないことから，制約から切り離して考えることができます．
