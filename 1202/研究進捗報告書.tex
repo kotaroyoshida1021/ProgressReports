@@ -1,0 +1,99 @@
+\documentclass[11pt]{jsarticle}
+
+\usepackage{SPR}
+
+\headerSPR
+\begin{document}
+	\titleSPR{\number\year}{\number\month}{\number\day}{D2}{吉田　皓太郎}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRabst
+		\begin{itemize}
+			\item 機械学習を用いたカップ形状の設計支援
+			\item 着後形状予測のためのカップの変形解析
+		\end{itemize}
+		
+		
+	\articleSPRobj
+		\begin{enumerate}
+			\item 定性的な機能要求を満たせるようなカップ形状を設計できる
+			\item 布の物性とカップのパターンがどのような結びつきを持っているかを調べることができる．
+		\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　1.前回からのノルマ
+	\articleSPRitemsone
+		%\begin{enumerate}
+		%	\item A
+		%\end{enumerate}
+		
+		\tableofcontents
+		
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%	\item 新規手法について
+%	\item ISFAアウトライン
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　2.具体的な成果
+	\articleSPRitemstwo
+	\renewcommand{\labelitemi}{$\blacktriangledown$}
+	%\renewcommand{\labelitemi}{$\bigcirc$}
+	\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+	\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+	\newcommand{\Ker}{{\rm Ker}}
+	\newcommand{\rank}{{\rm rank}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{研究進捗について}
+		D$\&$S2020で発表した入力形状に対する出力評価予測の逆問題について考えております．現在残っている課題として，グラム行列の逆行列が，数値的に計算すると不安定になっているという点でした．グラム行列を確認すると，ランク落ちしており，行列として計算が難しいという結論に至りました．そこで，パラメータを入力した際，システムによって行列ランクのチェックを行い，プログラムのモードを変える方法を考えました．
+		\subsection{逆行列が存在する場合（行列がフルランクである場合）}
+			従来とやり方は同じですが，数値計算上なめらかにするため，出力をRitz法により表現し，離散化します．すなわち，
+			\begin{equation}\label{eq:Yeq}
+				\bd{y} = [\bd{a}\cdot \bd{e}(s_i)]_i
+			\end{equation}
+			と表します．
+		\subsection{逆行列が存在しない場合（行列のランク落ち）}
+			ランク落ちした場合について考える．はじめに，$ \bd{y} = (\bd{K} + \sigma^2 \bd{I}) \bd{a} $とおく．そうすると，対数尤度の式は以下のようになります．
+			\begin{equation}\label{key}
+				-\log|\bd{K}| - \bd{y}^T \bd{K}_{\theta}^{-1} \bd{y} = -\log|\bd{K}| - \bd{a}^T \bd{K}_{\theta} \bd{a} 
+			\end{equation}
+			これを，$ \bd{a} $に関する尤度最大化問題（値が出る確率が最も高くなる）と捉えると，極値条件は
+			\begin{equation}\label{eq:EX_COND}
+				\bd{K} \bd{a} = \bd{0}
+			\end{equation}
+			となる．グラム行列がランク落ちするならば，核$ \Ker \bd{K}_{\theta}  \neq \bd{0} $となります．この時，$ \bd{a} $は係数ベクトル$ \bd{c} $を用いて
+			\begin{equation}\label{eq:Aeq}
+				\bd{a} = (\Ker \bd{K}_{\theta} ) \bd{c}
+			\end{equation}
+			と表すことができる．この$ \bd{a} $は，ガウス過程の事後分布の定数ベクトル部分と同じであるため，関数の任意の値は，
+			\begin{equation}\label{eq:Dist_eq}
+				f(s) = \sum_{i=0}^{n-1} a_{f,i} k(s,s_i)
+			\end{equation}
+			によって表現できます．
+		\subsection{まとめ}
+		以上をまとめると，以下のような単一目的？な最適化問題に帰結できるのではと考えます．
+		\begin{eqnarray}
+			\min \;\; &&f(\bd{a}) = \int_{0}^{L} (\zetav_{LW} \cdot \zetav -1 )^2 + (\etav \cdot \zetav_{LW})^2 ds\\
+			\mathrm{s.t.} \;\;&& -\partdf{}{\bd{\theta}_{j}}\log|\det \bd{K}_{\theta_{j}}| - \av_j^T \partdf{}{\bd{\theta}_{j}} \tilde{\bd{K}}_{\theta_{j}} \av_j if \;\; \rank \bd{K}_{\theta_{j}} = \dim \bd{K}_{\theta_{j}} \;\; \forall j \in [\alpha,\omega_{\eta}] 
+		\end{eqnarray}
+		設計変数は$ \av_j$に加え，初期姿勢$ \zetav_0,\xiv_0,\etav_0 $だが，$ \zetav_0 = \zetav_{LW}(0) $と一致させればよいため，$ \xiv_0,\etav_0 $が正規直交基底の制約を満たしつつ表現されればよい．
+	\section{To Do List}
+		\begin{itemize}
+			\item 可展面関連の研究整理：製品に使われているものなど
+			\item 形状，特に曲面形状が決定する性能にはどのような例があるか．
+			\item その性能の定量的数値が与えられ，かつそれが定式化が難しい場合などはあるか？（ブラジャーカップの例以外，例：複雑な解析結果によって得られる値は，これが当てはまるが，感性の定量化はそれそのものが難しい．）
+			
+		\end{itemize}
+				
+	\newpage
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　3.達成できなかったこととその問題点
+	%\articleSPRthree
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{14cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\articleSPRfour
+	\articleSPRfive
+\end{document}
