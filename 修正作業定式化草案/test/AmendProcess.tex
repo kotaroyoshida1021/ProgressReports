@@ -1,0 +1,32 @@
+\newcommand{\STP}[3]{\det[#1,\; #2,\; #3]}
+
+\section{定式化の流れ}
+	\subsection{修正作業の定義}
+		本研究が対象する修正作業は，ブラジャーカップにおける下カップの上下接ぎライン形状の変更作業を対象とする．この修正作業には，
+		\begin{itemize}
+			\item 可展面制約を満たす
+			\item 形状が大きく変化しない
+			\item 形状がなるべくなめらかである．
+		\end{itemize}
+		という三つに分けられるのではないかと考える．元の可展面が十分なめらかである場合，この大きく変化しないは，なめらかさの要求を包括すると考えると，この大きく変化しないという目的関数の下，形状を最適化することで，修正作業を定式化することを考える．
+		
+	\subsection{定式化}
+		下ワイヤの弧長パラメータを$ s $とし，上下接ぎラインの弧長パラメータを$ u $とする．上下接ぎラインの空間座標$ \tilde{\bd{x}}_U(s) $が，ある方向ベクトル$ \bd{e}(s) $に$ \varepsilon(s) $だけ動いた曲線が，可展開条件を満たすならば，次式が成立する．
+		\begin{equation}\label{eq:dev_eq}
+			\det[\tilde{\bd{\zeta}}_U + \varepsilon' \bd{e} + \varepsilon \bd{e}' ,\;\bd{\zeta}_L,\;\tilde{\bd{x}}_U + \varepsilon \bd{e}(s) - \bd{x}_L] = 0
+		\end{equation}
+		
+		この式を整理すると，次式のように整理できる．
+		\begin{equation}\label{eq:dev_eq1}
+			\det[\bd{e},\; \bd{\zeta}_L,\; \bd{x}_U - \bd{x}_L]\varepsilon' = -\left( u' \STP{\bd{\zeta_U}}{\bd{\zeta}_L}{\bd{e}} + \STP{\bd{e}'}{\bd{\zeta}_L}{\bd{x}_U - \bd{x}_L}\right)\varepsilon - \STP{\bd{e}'}{\bd{\zeta}_L}{\bd{e}} \varepsilon^2
+		\end{equation}
+		こうすることで，$ \varepsilon $に関する微分方程式に帰結できる．すなわち，$ \bd{\zeta}_U $の成分を記述するオイラー角$ \phi,\theta $が決定すれば，式\ref{eq:dev_eq1}を解き，上下接ぎラインがどれだけ変位したかを知ることができる．
+		
+		変位した可展面の任意のパラメータ$ s,\hat{t} \in [0,L_L] \times [0,D(s)] $における空間座標は，次式のように表される．
+		\begin{equation}\label{eq:Sur_eqhat}
+			\bd{\hat{x}}_U = \bd{x}_L + \hat{t} \hat{\bd{g}}
+		\end{equation}
+		ただし，$ \hat{\bd{g}}$は，$ \tilde{\bd{x}}_U + \varepsilon \bd{e}(s) - \bd{x}_L $を自身のノルムで割り，正規化したベクトルを表している．この時，ある$s$に対する曲面の二つの空間座標間の総移動量は，三つの空間座標$ \bd{x}_L,\bd{x}_U,\bd{x}_U + \varepsilon \bd{e} $からなる三角形の面積であると定義する．すなわち，目的関数は次式のように表される．
+		\begin{equation}\label{eq:Objective}
+			\int_{0}^{L_L} |\varepsilon \bd{e} \times (\bd{x}_U - \bd{x}_L) | ds
+		\end{equation}
