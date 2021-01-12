@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  6 JAN 2021 14:27
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  12 JAN 2021 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,24 +405,42 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 14.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 4.805pt on input line 14.
-) [2]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 69--71
+) (./SurfaceTheory.tex [2] [3] [4]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 148.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 148.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 148.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 148.
+
+
+LaTeX Warning: Reference `eq:Dev_sigmaEq_t' on page 5 undefined on input line 1
+48.
+
+) [5] [6]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 70--72
 []
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 69--71
+Overfull \hbox (12.0pt too wide) in paragraph at lines 70--72
 [] 
  []
 
-[3] (./研究進捗報告書.aux) ) 
+[7] (./研究進捗報告書.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4535 strings out of 492759
- 60729 string characters out of 6143227
- 142498 words of memory out of 5000000
- 8925 multiletter control sequences out of 15000+600000
+ 4562 strings out of 492759
+ 61139 string characters out of 6143227
+ 145498 words of memory out of 5000000
+ 8949 multiletter control sequences out of 15000+600000
  17592 words of font info for 79 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 53i,11n,50p,407b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,50p,410b,335s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 研究進捗報告書.dvi (3 pages, 10904 bytes).
+Output written on 研究進捗報告書.dvi (7 pages, 28852 bytes).

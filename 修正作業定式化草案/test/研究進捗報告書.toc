@@ -1,8 +1,14 @@
 \contentsline {section}{\numberline {1}研究進捗について}{1}%
 \contentsline {subsection}{\numberline {1.1}研究会進捗}{1}%
-\contentsline {section}{\numberline {2}定式化の流れ}{1}%
-\contentsline {subsection}{\numberline {2.1}修正作業の定義}{1}%
+\contentsline {section}{\numberline {2}定式化の流れ}{2}%
+\contentsline {subsection}{\numberline {2.1}修正作業の定義}{2}%
 \contentsline {subsection}{\numberline {2.2}定式化}{2}%
-\contentsline {subsection}{\numberline {2.3}論文調べ}{2}%
-\contentsline {subsection}{\numberline {2.4}D論スケジュールや構成・どこまで範囲を広げるか}{2}%
-\contentsline {section}{\numberline {3}To Do List}{2}%
+\contentsline {section}{\numberline {3}曲面論の基本定理など}{2}%
+\contentsline {subsection}{\numberline {3.1}曲面論の基本定理の成立条件について}{2}%
+\contentsline {subsection}{\numberline {3.2}数式のおことわり}{3}%
+\contentsline {subsection}{\numberline {3.3}多様体および外微分形式の導入の概説}{3}%
+\contentsline {subsection}{\numberline {3.4}曲面における外微分形式}{4}%
+\contentsline {subsection}{\numberline {3.5}可展面における積分可能条件について}{5}%
+\contentsline {subsection}{\numberline {3.6}論文調べ}{5}%
+\contentsline {subsection}{\numberline {3.7}D論スケジュールや構成・どこまで範囲を広げるか}{6}%
+\contentsline {section}{\numberline {4}To Do List}{6}%

@@ -30,13 +30,13 @@
 			\item 分配則$ (\bd{x}_1 + \bd{x}_2) \wedge \bd{y} = \bd{x}_1 \wedge \bd{y} + \bd{x}_2 \wedge \bd{y} $
 			\item 結合則$ \bd{x} \wedge (\bd{y} \wedge \bd{z}) = (\bd{x} \wedge \bd{y} )\wedge \bd{z}$
 		\end{itemize}
-		また，空間基底$ \{ \bd{\sigma}_i \} $に対し，$ \bd{a} = \sum a_i \bd{sigma}_i,\bd{b} = \sum b_j \bd{\sigma}_j$と表されるベクトル集合を，1-ベクトルと呼び，外積によって定義される次のような空間
+		また，空間基底$ \{ \bd{\sigma}_i \} $に対し，$ \bd{a} = \sum a_i \bd{\sigma}_i,\bd{b} = \sum b_j \bd{\sigma}_j$と表されるベクトル集合を，1-ベクトルと呼び，外積によって定義される次のような空間
 		\begin{equation}\label{eq:Gaiseki}
-			\bd{a} \wedge \bd{b} = \sum_i \sum_j a_i b_j (\bd{sigma}_i \wedge \bd{sigma}_j)
+			\bd{a} \wedge \bd{b} = \sum_i \sum_j a_i b_j (\bd{\sigma}_i \wedge \bd{\sigma}_j)
 		\end{equation}
 		によって得られるベクトルを2-ベクトルと呼ぶ．これを一般化すると$p$-ベクトルは，次式のように表される．
 		\begin{equation}\label{eq:Gaiseki2}
-			\sum_{i_1,\cdots i_p} a_{i_1,\cdots,i_p} (\bd{sigma}_1 \wedge \cdots \wedge \bd{sigma}_n)
+			\sum_{i_1,\cdots i_p} a_{i_1,\cdots,i_p} (\bd{\sigma}_1 \wedge \cdots \wedge \bd{\sigma}_n)
 		\end{equation}
 		$ p $-ベクトル$ \mu $および$ q $-ベクトル$ \nu $に対し，外積は次のような性質を持つ．
 		\begin{equation}\label{eq:Gaiseki3}
@@ -48,7 +48,7 @@
 		\end{equation}
 		外微分作用素$ \Delta $は，$p$-形式を$ (p+1) $-形式にする線形写像であり，次の性質を持つと定義する．
 		\begin{itemize}
-			\item $ \Delta(\omega + \eta) = d\omega + d\eta $ 
+			\item $ \Delta(\omega + \eta) = \Delta \omega + \Delta \eta $ 
 			\item $ \lambda $が$ p $-形式の場合において，$ \Delta(\lambda \wedge \mu ) = \Delta \lambda \wedge \mu + (-1)^p \lambda \wedge \Delta \mu $
 			\item $ \Delta (\Delta \omega) = 0 $
 			\item 関数$ f $に対して$ \Delta f = \sum \frac{\partial f}{\partial x_i }\Delta x_i $
@@ -95,3 +95,63 @@
 		\begin{equation}\label{eq:DeltaBeq}
 			\sum_{k=1}^{2} (\Delta b_{i,k} - \sum_{j=1}^2 b_{i,j} \omega_{k,j} - \sum_{j=1}^2 b_{j,k} \omega_{i,j}) \wedge \sigma_k = 0
 		\end{equation}
+	\subsection{可展面における積分可能条件について}
+		本章では，可展面において二つの条件が成立することを示す．線織面の一般座標$ \bd{X}(s,t) $は，次式で表される．
+		\begin{equation}\label{eq:GeneralPos_RuledSurface}
+			\bd{X}(s,t) = \bd{x}_L + t \bd{d}_2
+		\end{equation}
+		ここで$ \bd{x}_L $は，曲面上の基準となる曲線を表す．この一般座標に外微分作用素を作用させると以下のように表される．
+		\begin{equation}\label{eq:TotalDiff_Pos0}
+			\Delta \bd{X} = \frac{\partial \bd{X}}{\partial s} ds + \frac{\partial \bd{X}}{\partial t} dt
+		\end{equation}
+		ここで，$ \frac{\partial \bd{X}}{\partial s},\frac{\partial \bd{X}}{\partial t} $は次式のように計算される．
+		
+		\begin{eqnarray}
+			 \frac{\partial \bd{X}}{\partial s} &=& \bd{\zeta} -t(\alpha' + \omega_{\eta}) \bd{d}_1 \\
+			 \frac{\partial \bd{X}}{\partial t} &=& \bd{d}_2
+		\end{eqnarray}
+		また，$ \bd{\zeta} ,\bd{\xi},\bd{d}_1,\bd{d}_2$には，次式が成り立つ．
+		\begin{equation}\label{eq:RelationD1D2}	
+			\left[
+			\begin{array}{cc}
+			\bd{d}_1 & \bd{d}_2
+			\end{array}
+			\right] = \bd{R}(\alpha) 	\left[
+			\begin{array}{cc}
+			\bd{\zeta} & \bd{\xi}
+			\end{array}
+			\right]
+		\end{equation}
+		ただし，$ \bd{R}(\alpha) $は，対象とする2つの基底のなす平面内で角度$ \alpha $の回転を与える行列である．
+		これを用いて式を整理すると，
+		\begin{eqnarray}\label{eq:DiffEq}
+			\Delta \bd{X} &=& \{ (\cos \alpha - t(\alpha' + \omega_{\eta}) ) \bd{d}_1 + -\sin \alpha \bd{d}_2 \}ds + \bd{d}_2 dt \\
+			&=& \{  (\cos \alpha - t(\alpha' + \omega_{\eta}) )ds \} \bd{d}_1 + (-\sin \alpha ds + dt) \bd{d}_2 
+		\end{eqnarray}
+		$ \bd{d}_1,\bd{d}_2$は，曲面の接平面の基底ベクトルであることから，\req{eq:dreq}と比較することにより，曲面における1-形式$ \sigma_i $は
+		\begin{equation}\label{eq:Dev_sigmaEq_s}
+			\sigma_1 = (\cos \alpha - t(\alpha' + \omega_{\eta}) )ds
+		\end{equation}
+		
+		\begin{equation}\label{eq::Dev_sigmaEq_t}
+			\sigma_2 = -\sin \alpha ds + dt
+		\end{equation}
+		
+		と表される．また，$ \Delta \bd{d}_1, \Delta \bd{d}_2, \Delta \bd{\eta},$を計算することにより，$ \bd{\Omega} = \{\omega_{i,j}\} $は次式で表される．
+		\begin{equation}\label{eq:Dev_OmegaEq}
+			\bd{\Omega} = \left[ \begin{array}{ccc}
+				0 & (\alpha' + \omega_{\eta})ds & -\frac{\omega_{\xi} }{\cos \alpha} ds \\
+				-(\alpha' + \omega_{\eta})ds & 0 & 0\\
+				\frac{\omega_{\xi} }{\cos \alpha} ds & 0 & 0 
+			\end{array}\right]
+		\end{equation}
+		\req{eq:Dev_sigmaEq_s},\req{eq:Dev_sigmaEq_t}および\req{eq:Dev_OmegaEq}の結果から，$ \bd{B} = \{ b_{ij} \} $は次式で求められる．
+		\begin{equation}\label{eq:beq}
+			\bd{B} = \left[
+				\begin{array}{cc}
+					-\frac{\omega_{\xi} }{\cos \alpha  (\cos \alpha - t(\alpha' + \omega_{\eta}) ) } & 0 \\
+					0 & 0
+				\end{array}
+			\right]
+		\end{equation}
+		したがって，ここから，$ b_{i2,1} = b_{i1.2} =0 $を導くことができ，$ K = \det \bd{B} = 0 $を導くことができる．したがって，可展面においては曲面の基本定理が成立することが示された．
