@@ -46,10 +46,41 @@
 	\section{研究進捗について}
 		\subsection{研究会進捗}
 			$ \bd{y} = \bd{K}\bd{a} $とおき，$ \bd{a}^T \bd{K} \bd{a} / \lambda_{\min} - 1 $を制約を置く．これにより，桁数の小さい誤差も対応できるようにしている．（ここらへんは誤差評価の仕方に工夫のし甲斐があるかもしれない）
+			また，局所解に陥らないように，目的関数に以下のような値を加えた．今回の$ \lambda $は，0.1に設定している．
+			\begin{equation}
+				\lambda \int_{0}^{L} \frac{1}{(\kappa - |\omega_{\eta}|)^2} ds
+			\end{equation}
 			
-			計算結果を示す．制約に関してはそれぞれ数$ \% $程度の誤差にはなったものの，対応する出力値$ \phi_1 \frac{V}{S} $を比較すると，だいたい誤差は10$ \% $ほどとなった．このラインは非常によいとまでは行かないが，非常に悪いとまでは言わないような・・．
+			計算結果を示す．制約に関しては二次形式に関する制約がだいたい数$ \% $程度の誤差にはなったところを終了判定の基準定めた．
+			形状の比較をすると，zy平面からの形状はとても近しいが，zx平面で確認する図では，似てはいるが少し異なった形を出力した．
 			
-			ちなみに，二次形式制約は，だいたい数$ \% $程度の誤差までに落ち着いておりました．
+			しかし，対応する出力値$ \phi_1 \frac{V}{S} $を比較すると，だいたい相対誤差は2$ \% $ほどとなった．このラインは非常によいとまでは行かないが，ある程度はよい復元を得られたのではないかと考えられる．
+			
+			
+			得られた結果とパラメータ元の形状比較
+			\begin{figure}
+				\begin{minipage}{0.5\hsize}
+					\centering
+					\includegraphics[width = \columnwidth]{./figure/ObtainedRidgeLinefromz-x.png}
+				\end{minipage}
+				\begin{minipage}{0.5\hsize}
+					\centering
+					\includegraphics[width = \columnwidth]{./figure/ObtainedRidgeLinefromz-y.png}
+				\end{minipage}
+				\caption{元データ}
+			\end{figure}
+			\begin{figure}
+				\begin{minipage}{0.5\hsize}
+					\centering
+					\includegraphics[width = \columnwidth]{./figure/AlignWire_xyview.png}
+				\end{minipage}
+				\begin{minipage}{0.5\hsize}
+					\centering
+					\includegraphics[width = \columnwidth]{./figure/AlignWire_xzview.png}
+				\end{minipage}
+			\caption{得られた形状}
+			\end{figure}
+		
 		\subsection{ISCIEネタ再投稿の件について}
 			日本語論文には，ISCIEに出すんですか？それとも，機械学会などの論文でしょうか？
 			
@@ -60,7 +91,7 @@
 			個人的には，英語論文に再チャレンジしたい気もします．．時間的に厳しいかと思いますが．
 	\section{To Do List}
 		\begin{itemize}
-			\item 
+			\item 投稿論文修正・文章再考
 			\item 投稿論文のためのスクリプト作成し，追加数値実験を行う
 		\end{itemize}
 				
