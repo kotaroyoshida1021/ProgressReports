@@ -1,0 +1,30 @@
+\ProvidesPackage{preamble}
+\NeedsTeXFormat{LaTeX2e}
+
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage{subcaption}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}	%SI単位系
+%\usepackage{newtxtext}
+\usepackage[top=30truemm,bottom=20truemm,left=10truemm,right=30truemm]{geometry}
+\usepackage{setspace}	%spacing環境（行間）
+\usepackage{fancyhdr}	%ヘッダ編集
+\usepackage{array}		%表の罫線を太くため
+\usepackage{here}		%図や表をその記述位置で出力[H]
+\usepackage{mymacros}
+\setlength{\arrayrulewidth}{1.5pt}
+
+%subfigure labelで番号書式に括弧をつける
+\captionsetup[subfigure]{labelformat=simple}
+\renewcommand*{\thesubfigure}{(\alph{subfigure})}
+
+%引用を上付き，右括弧にする
+\makeatletter
+\def\@cite#1{\textsuperscript{#1)}}
+\makeatother
+
+%行列で使う大きい0
+\newfont{\bg}{cmr9 scaled\magstep4}
+\newcommand{\bigzerol}{\smash{\lower1.0ex\hbox{\bg 0}}}
+\newcommand{\bigzerou}{%
+   \smash{\hbox{\bg 0}}}

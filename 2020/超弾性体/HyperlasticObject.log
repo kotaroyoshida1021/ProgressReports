@@ -1,0 +1,1703 @@
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  26 FEB 2020 14:54
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**HyperlasticObject.tex
+(./HyperlasticObject.tex
+pLaTeX2e <2019-10-01>+1 (based on LaTeX2e <2019-10-01> patch level 3)
+! Undefined control sequence.
+l.1 \section
+            {超弾性体とは}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \section{超
+               弾性体とは}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.3 \subsection
+               {はじめに}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 4.
+! Undefined control sequence.
+l.4 ある物体の実座標系$ \bd
+                           {x} $に対し、物質座標系$ \bd{X} $の微小変化の関係が
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.4 ...の実座標系$ \bd{x} $に対し、物質座標系$ \bd
+                                                  {X} $の微小変化の関係が
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (29.62216pt too wide) in paragraph at lines 1--5
+[]\JY1/mc/m/n/10 超
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 弾
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 性
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 体
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 は
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 本
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 章
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 で
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 は 、
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 超
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 弾
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 性
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 体
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 基
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 本
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 的
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 な
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 事
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 項
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 お
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 よ
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 び 、
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 そ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 弱
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 形
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 式
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 導
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 出
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 ま
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 で
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 行
+ []
+
+
+Overfull \hbox (14.18115pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 う。
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 は
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 じ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 め
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 に
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 あ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 る
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 物
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 体
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 実
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 座
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 標
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 系
+ []
+
+
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 1--5
+\OML/cmm/m/it/10 x$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 に
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 対
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 し 、
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 物
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 質
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 座
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 標
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 系
+ []
+
+
+Overfull \hbox (9.06943pt too wide) in paragraph at lines 1--5
+\OML/cmm/m/it/10 X$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 微
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 小
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 変
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 化
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 関
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 係
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 1--5
+\JY1/mc/m/n/10 が 
+ []
+
+! Undefined control sequence.
+l.6 ^^Id\bd
+           {x} = \bd{F}d\bd{X}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.6 ^^Id\bd{x} = \bd
+                    {F}d\bd{X}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.6 ^^Id\bd{x} = \bd{F}d\bd
+                           {X}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (46.3471pt too wide) detected at line 7
+[]\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 FdX
+ []
+
+! Undefined control sequence.
+l.8 と表されるとする。この$ \bd
+                               {F} $を変形勾配テンソルと呼ぶ。このテンソルを...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.8 ...テンソルと呼ぶ。このテンソルを用いて、$ \bd
+                                                  {C},\bd{B} $を以下のように...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.8 ...と呼ぶ。このテンソルを用いて、$ \bd{C},\bd
+                                                 {B} $を以下のように定義する。
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 表
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 さ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 れ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 る
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 す
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 る 。
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 こ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (7.81946pt too wide) in paragraph at lines 7--9
+\OML/cmm/m/it/10 F$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 変
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 形
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 勾
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 配
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 テ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 ソ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 ル
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 呼
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 ぶ 。
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 こ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 テ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 ソ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 ル
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 用
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 い
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 て 、
+ []
+
+
+Overfull \hbox (19.83815pt too wide) in paragraph at lines 7--9
+\OML/cmm/m/it/10 C; B$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 以
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 下
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 よ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 う
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 に
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 定
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 義
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 す
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 7--9
+\JY1/mc/m/n/10 る 。 
+ []
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9 \begin{eqnarray}
+                    \label{eq:CandB_Define}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[1
+! Undefined control sequence.
+<write> \newlabel{eq:FloryTensor}{{1}{\thepage 
+                                               }}
+l.9 \begin{eqnarray}
+                    \label{eq:CandB_Define}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{eq:FloryTensor}{{1}{}}
+]
+! Undefined control sequence.
+l.10 ^^I\bd
+           {C} &=& \bd{F}^T \cdot \bd{F} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.10 ^^I\bd{C} &=& \bd
+                      {F}^T \cdot \bd{F} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.10 ^^I\bd{C} &=& \bd{F}^T \cdot \bd
+                                     {F} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bd 
+                    
+l.11 ^^I\bd
+           {B} &=& \bd{F} \cdot \bd{F}^T
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.11 ^^I\bd{B} &=& \bd
+                      {F} \cdot \bd{F}^T
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.11 ^^I\bd{B} &=& \bd{F} \cdot \bd
+                                   {F}^T
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (45.0253pt too wide) in alignment at lines 9--12
+ [][][] []
+ []
+
+! Undefined control sequence.
+l.13 この$ \bd
+              {C} $を右コーシーグリーン変形テンソル、$ \bd{B} $を左コーシー...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.13 ...} $を右コーシーグリーン変形テンソル、$ \bd
+                                                  {B} $を左コーシーグリーン...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 こ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (7.86249pt too wide) in paragraph at lines 12--14
+\OML/cmm/m/it/10 C$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 右
+ []
+
+
+Overfull \hbox (18.74432pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 コ ー
+ []
+
+
+Overfull \hbox (18.74432pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 シ ー
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 グ
+ []
+
+
+Overfull \hbox (18.74432pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 リ ー
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 変
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 形
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 テ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ソ
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ル 、
+ []
+
+
+Overfull \hbox (8.0868pt too wide) in paragraph at lines 12--14
+\OML/cmm/m/it/10 B$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 左
+ []
+
+
+Overfull \hbox (18.74432pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 コ ー
+ []
+
+
+Overfull \hbox (18.74432pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 シ ー
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 グ
+ []
+
+
+Overfull \hbox (18.74432pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 リ ー
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 変
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 形
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 テ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ソ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ル
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 呼
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 12--14
+\JY1/mc/m/n/10 ぶ 。 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 こ
+       れを用いてグリーン・ラグランジュひずみテンソル$ \bd{E} $は
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.15 ...グリーン・ラグランジュひずみテンソル$ \bd
+                                                 {E} $は
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (29.62216pt too wide) in paragraph at lines 15--16
+[]\JY1/mc/m/n/10 こ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 れ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 用
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 い
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 て
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 グ
+ []
+
+
+Overfull \hbox (18.74432pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 リ ー
+ []
+
+
+Overfull \hbox (13.15881pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ン ・
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ラ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 グ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ラ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ジ
+ []
+
+
+Overfull \hbox (7.47433pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ュ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ひ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ず
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 み
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 テ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ソ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 ル
+ []
+
+
+Overfull \hbox (7.95831pt too wide) in paragraph at lines 15--16
+\OML/cmm/m/it/10 E$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 15--16
+\JY1/mc/m/n/10 は 
+ []
+
+! Undefined control sequence.
+l.17 ^^I\bd
+           {E}=\frac{1}{2} (\bd{C}-\bd{I})
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.17 ^^I\bd{E}=\frac{1}{2} (\bd
+                               {C}-\bd{I})
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.17 ^^I\bd{E}=\frac{1}{2} (\bd{C}-\bd
+                                      {I})
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (57.29018pt too wide) detected at line 18
+[]\OML/cmm/m/it/10 E \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 ^
+^@ \OML/cmm/m/it/10 I\OT1/cmr/m/n/10 )
+ []
+
+! Undefined control sequence.
+l.19 ...れる。また、アルマンドひずみテンソル$ \bd
+                                                 {A} $は
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 表
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 さ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 れ
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 る 。
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ま
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 た 、
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ア
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ル
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 マ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ド
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ひ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ず
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 み
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 テ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ン
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ソ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 ル
+ []
+
+
+Overfull \hbox (7.50002pt too wide) in paragraph at lines 18--20
+\OML/cmm/m/it/10 A$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 18--20
+\JY1/mc/m/n/10 は 
+ []
+
+! Undefined control sequence.
+l.21 ^^I\bd
+           {A} = \frac{1}{2} (\bd{I}-\bd{B}^{-1})
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.21 ^^I\bd{A} = \frac{1}{2} (\bd
+                                 {I}-\bd{B}^{-1})
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.21 ^^I\bd{A} = \frac{1}{2} (\bd{I}-\bd
+                                        {B}^{-1})
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (67.79234pt too wide) detected at line 22
+[]\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 I \OMS/cmsy/m/n/10 ^
+^@ \OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 )
+ []
+
+! Undefined control sequence.
+l.23 と表される。この二つのひずみは変位$ \bd
+                                            {u} $と物体の位置ベクトル$ \bd{X...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...は変位$ \bd{u} $と物体の位置ベクトル$ \bd
+                                                 {X},\bd{x} $を用いて以下のよう
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...$ \bd{u} $と物体の位置ベクトル$ \bd{X},\bd
+                                                  {x} $を用いて以下のように...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 表
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 さ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 れ
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 る 。
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 こ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 二
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 つ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 ひ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 ず
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 み
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 は
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 変
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 位
+ []
+
+
+Overfull \hbox (5.72458pt too wide) in paragraph at lines 22--24
+\OML/cmm/m/it/10 u$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 と
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 物
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 体
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 位
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 置
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 ベ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 ク
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 ト
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 ル
+ []
+
+
+Overfull \hbox (18.67355pt too wide) in paragraph at lines 22--24
+\OML/cmm/m/it/10 X; x$
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 を
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 用
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 い
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 て
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 以
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 下
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 の
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 よ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 う
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 に
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 表
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 さ
+ []
+
+
+Overfull \hbox (9.62216pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 れ
+ []
+
+
+Overfull \hbox (14.1623pt too wide) in paragraph at lines 22--24
+\JY1/mc/m/n/10 る 。 
+ []
+
+! Undefined control sequence.
+l.25 ^^I\bd
+           {E} &=& E_{ij} \bd{e}_i \bigotimes \bd{e}_j = \frac{1}{2} \left\{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ^^I\bd{E} &=& E_{ij} \bd
+                             {e}_i \bigotimes \bd{e}_j = \frac{1}{2} \left\{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ^^I\bd{E} &=& E_{ij} \bd{e}_i \bigotimes \bd
+                                                 {e}_j = \frac{1}{2} \left\{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ...mes \bd{e}_j = \frac{1}{2} \left\{ \partdf
+                                                  {u_i}{X_j} + \partdf{u_j}{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ...{1}{2} \left\{ \partdf{u_i}{X_j} + \partdf
+                                                  {u_j}{X_i} + \partdf{\bd{u...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ...df{u_i}{X_j} + \partdf{u_j}{X_i} + \partdf
+                                                  {\bd{u}}{X_i} \partdf{\bd{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ..._i}{X_j} + \partdf{u_j}{X_i} + \partdf{\bd
+                                                  {u}}{X_i} \partdf{\bd{u}}{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ...f{u_j}{X_i} + \partdf{\bd{u}}{X_i} \partdf
+                                                  {\bd{u}}{X_j} \right\} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ...j}{X_i} + \partdf{\bd{u}}{X_i} \partdf{\bd
+                                                  {u}}{X_j} \right\} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bd 
+                    
+l.26 ^^I\bd
+           {A} &=& E_{ij} \bd{e}_i \bigotimes \bd{e}_j = \frac{1}{2} \left\{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ^^I\bd{A} &=& E_{ij} \bd
+                             {e}_i \bigotimes \bd{e}_j = \frac{1}{2} \left\{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ^^I\bd{A} &=& E_{ij} \bd{e}_i \bigotimes \bd
+                                                 {e}_j = \frac{1}{2} \left\{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ...mes \bd{e}_j = \frac{1}{2} \left\{ \partdf
+                                                  {u_i}{x_j} + \partdf{u_j}{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ...{1}{2} \left\{ \partdf{u_i}{x_j} + \partdf
+                                                  {u_j}{x_i} + \partdf{\bd{u...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ...df{u_i}{x_j} + \partdf{u_j}{x_i} + \partdf
+                                                  {\bd{u}}{x_i} \partdf{\bd{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ..._i}{x_j} + \partdf{u_j}{x_i} + \partdf{\bd
+                                                  {u}}{x_i} \partdf{\bd{u}}{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ...f{u_j}{x_i} + \partdf{\bd{u}}{x_i} \partdf
+                                                  {\bd{u}}{x_j} \right\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.26 ...j}{x_i} + \partdf{\bd{u}}{x_i} \partdf{\bd
+                                                  {u}}{x_j} \right\}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (202.63725pt too wide) in alignment at lines 24--27
+ [][][] []
+ []
+
+)
+! Emergency stop.
+<*> HyperlasticObject.tex
+                         
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 9 strings out of 492759
+ 143 string characters out of 6143227
+ 69539 words of memory out of 5000000
+ 4555 multiletter control sequences out of 15000+600000
+ 7511 words of font info for 31 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 18i,8n,12p,199b,113s stack positions out of 5000i,500n,10000p,200000b,80000s
+Output written on HyperlasticObject.dvi (1 page, 948 bytes).

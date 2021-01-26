@@ -1,0 +1,98 @@
+\section{力法(Traction Method)とは}
+本章では，形状最適化におけるABAQUSの標準モジュールとして実装されてある力法について紹介する．
+\subsection{領域変動の表現手法}
+変動が許されているすべての領域を含む固定された開領域を許容領域$ \Omega $と定義する．許容領域の境界$ \partial \Omega $はなめらかであると仮定する．領域の変動は，変動に対する写像$ T_s(\Xv) $を用いて以下のように表される．
+
+\begin{equation}\label{eq:Ts_define}
+	\xv = \bd{T}_s(\Xv)
+\end{equation}
+ただし，$ D $を変動させないために，境界$ \partial D $上の特異点は変動しないとし，変動を拘束する猟奇$ \Psi $では次の関係を仮定する．
+\begin{equation}\label{eq:Restrict}
+	n_i V_i = 0 \; \text{on} \; \partial D \;\; , \;\;  \Vv = \bd{0} \; \text{in} \; \Psi \in \bar{D}
+\end{equation}
+ここで，$ s $は変動の履歴を表すとし，$ \Xv $は物質座標系（局所座標），$ \xv $は実座標系（絶対座標）とする．
+
+領域の微小変動は，テイラー展開に基づいて，その変化量$ \Vv $を用いて次のように近似表現される．
+\begin{equation}\label{eq:Ts_Taylor}
+	\bd{T}_{s+\Delta s}(\Xv) = \bd{T}_s(\Xv) + \Vv(\xv) \Delta s + O(\Delta s)
+\end{equation}
+ただし，$ O $はランダウの記号を表す．
+
+この$ \Vv $を用いて領域変動に伴う分布関数の履歴$ s $についての導関数について考える．物質座標系における分布関数を$ \Psi_s(\Xv) $，実座標系における分布関数を$ \psi_s(\xv) $とするとき，両者の間には，以下で示すような関係がある．
+
+\begin{equation}\label{eq:Psiandpsi}
+	\Psi_s(\Xv) = \psi_s(\bd{T}_s(\Xv))
+\end{equation}
+この等式を$ s $について微分してやると
+\begin{eqnarray}
+	\partdf{\Psi_s}{s} &=& \partdf{\Psi_s}{\psi_s} \partdf{\psi_s}{s} + \partdf{\Psi_s}{\bd{T}_s} \partdf{\bd{T}_s}{s} \\
+	&=& \partdf{\psi_s}{s} + \partdf{\Psi_s}{\xv} \cdot \Vv
+\end{eqnarray}
+が得られる．
+
+これを用いて，実際に汎関数$ J $の導関数例について考える．$ J $が分布関数$ \psi_s $の領域積分
+\begin{equation}\label{eq:AreaIntegral}
+	J(\Omega_s,\psi_s) = \int_{\Omega_s} \psi_s dx
+\end{equation}
+として与えられている場合を考える．偏微分に関する連鎖則を用いることで$ J $の導関数は
+\begin{eqnarray}\label{eq:J_Div}
+	\partdf{J}{s} &=&\int_{\Omega_s} \partdf{\psi_s}{s} dx + \int_{\Gamma_s} \psi_s \bd{V} \cdot \bd{n} d\Gamma \\
+	&=& \int_{\Omega_s} \partdf{\psi_s}{s}  + \partdf{(\psi_s \Vv)}{\xv} dx \\
+	&=& \int_{\Omega_s} \partdf{\Psi_s}{s}  + \psi_s \partdf{\Vv}{\xv} dx 
+\end{eqnarray}
+と表される．また，境界積分で以下のような形で与えられている$ J $について考える．
+\begin{equation}\label{eq:BoundaryIntegral}
+	J(\Gamma_s,\psi_s) = \int_{\Gamma_s} \psi_s dS
+\end{equation}
+
+この場合も，同様の手順を踏むことで以下のように計算できる．
+\begin{eqnarray}\label{eq:J_Div2}
+\partdf{J}{s} &=&\int_{\partial \Omega_s} \partdf{\psi_s}{s} + (\partdf{\psi_s}{\xv} \cdot \bd{n}+\psi_s \kappa )\bd{V} \cdot \bd{n} dS \\
+&=& \int_{\partial \Omega_s} \partdf{\Psi_s}{s} + \psi_s \kappa \bd{V} \cdot \bd{n} dS
+\end{eqnarray}
+ただし，$ \kappa $は二次元の場合は曲率，三次元の場合には平均曲率を表している．
+
+この領域変動の表現方法を用いて，実際の最適化問題について考える．ある変位$ \bd{u} ,\bd{v}$に対する境界値問題$ Q(\bd{u},\bd{\lambda})=0 $が\eqref{eq:SimplyPotentialWeak}のような弱形式で与えられているとし，領域に関する不等式制約$ \int_{\Omega} \bd{I} d\Omega$下で，ある目的関数$ \Pi(\bd{u}) $を最小化するような最小化問題を考える．このとき，ラグランジュ乗数法を用いてこの問題を表現することを考える．$ \bd{\lambda} $を等式制約に関するラグランジュ乗数，$ \bd{\mu} $を不等式制約に関するラグランジュ乗数法であるとすると，そのラグランジュ関数$ L(\bd{u},\bd{\lambda},\bd{\mu}) $は，次のように表される．
+\begin{equation}\label{eq:LagrangeFuncEq}
+	L(\bd{u},\bd{\lambda},\bd{\mu}) = \Pi(\bd{u}) -  Q(\bd{u},\bd{\lambda}) - \bd{\mu} \bd{I}(\Omega_s)
+\end{equation}
+ここで，$ Q(\bd{u},\bd{\lambda}) $を，以下の式で示すように領域積分を行う被積分関数$ \bd{\lambda} \bd{Y}_1 $および境界積分を行う被積分関数$ \bd{\lambda} \bd{Y}_2$によって表現しなおす．
+\begin{equation}\label{eq:Y1Y2_Eq}
+	Q(\bd{u},\bd{\lambda}) = \int_{\Omega} \bd{\lambda} \bd{Y}_1 d\Omega + \int_{\partial \Omega_2} \bd{\lambda} \bd{Y}_2 dS
+\end{equation}
+これを用いてラグランジュ関数の物質導関数$ L' $の表現は，\eqref{eq:J_Div,eq:J_Div2}を用いることによって以下のように表される．
+\begin{equation}\label{eq:LagrangeDivEq}
+	L' =  (\Pi(\bd{v}))' - Q(\bd{u},\bd{\lambda}') - R(\bd{u}',\bd{\lambda}) - \bd{\mu}' \int_{\Omega} \bd{I} d\Omega +l_G(\Vv)
+\end{equation}
+ただし，$ s $に関する偏微分は全て統一してダッシュを用いて表現している．また，式中に現れる$ R(\bd{u}',\bd{\lambda}),l_G(\Vv) $に関しては次式らで定義している．
+\begin{eqnarray}\label{eq:DefR_and_l_G}
+	R(\bd{u}',\bd{\lambda}) &\triangleq& \int_{\Omega} \bd{\lambda} \partdf{\bd{Y}_1}{s} d\Omega + \int_{\partial \Omega_2} \bd{\lambda} \partdf{\bd{Y}_2}{s} dS \\
+	l_G(\bd{V}) &=& \int_{\Omega} \bd{G}\cdot \bd{V} d\Omega \\
+	\bd{G} &\triangleq& \left[\left\{\gamma_{\Omega_2} \left(\bd{\lambda}  \partdf{\bd{Y}_2}{\bd{X}} \bd{n} + \partdf{\bd{\lambda}}{\bd{X}} \bd{Y}_2 \right)\cdot \bd{n} +\bd{\lambda} \bd{Y}_2 \kappa \right\} + \gamma_{\Omega} \left\{ \bd{\lambda} \bd{Y}_1 + \bd{\mu} \bd{I} \right\}\right] \bd{n}
+\end{eqnarray}
+この$ \bd{G} $は形状勾配ベクトルと呼ばれるベクトル量であり，履歴に対する形状や外力による条件で決定される．また，$ \gamma_{\Omega} $はトレース作用素で，領域$ \Omega $で定義された関数$ \upsilon $から，その境界$ \partial \Omega $の上の成分だけを取り出した関数を与える線形作用素である．$ (\Pi(u))' = \tilde{\Pi}(u')$と定義すれば，ラグランジュ関数の停留条件は次式で表される．
+\begin{eqnarray}\label{eq:DelLagrangeEq}
+	\tilde{\Pi}(u') - R(\bd{u}',\bd{\lambda}) &=& 0 \\
+	Q(\bd{u},\bd{\lambda}') &=& 0 \\
+	l_G(\Vv)&=&0 \\
+	\bd{\mu}'\int_{\Omega} \bd{I} d\Omega &=& 0 \\
+	I_i&\leqq&0
+\end{eqnarray}
+\subsection{力法とは}
+力法とは，初期領域$ \Omega $から$ k $回目の領域変動を表す速度場$ \bd{V}^{(k)} $を次の支配方程式によって解析する手法である．
+\begin{equation}\label{eq:SubjectToV}
+	\int_{\Omega_s} U(\bd{V^{(k)}},\bd{w}) dx = -l^{(k)}_G(\bd{V^{(k)}})
+\end{equation}
+この支配方程式で決定された領域変動は，ラグランジュ関数$ L $を減少させることを示す．\eqref{eq:SimplyPotentialWeak}およびキューン・タッカー条件がすべて満たされる場合，$ L $の摂動展開は次式で表される．
+\begin{equation}\label{eq:MinimumDeveloped}
+	\Delta L^{(k)} = l_G^{(k)}(\Delta s \Vv^{(k)}) + O(|\Delta s|)
+\end{equation}
+ここで，\eqref{eq:MinimumDeveloped}に\eqref{eq:SubjectToV}を代入する．さらに，$ U(\bd{v},\bd{w}) $に関する正定値性を示す次式
+\begin{equation}\label{eq:U_SatisfiedEq}
+	\exists \alpha :\; U(\xiv,\xiv) \geqq \alpha ||\xiv||^2
+\end{equation}
+が満たされているとすると，$ \Delta s $が十分小さいとき，次の関係を得ることができる．
+\begin{equation}\label{eq:V_Satisfies}
+	\Delta L^{(k)}　= -U(\Delta s \Vv^{(k)},\Delta s \Vv^{(k)})<0
+\end{equation}
+この式は，凸性が保証されている問題において，$ L $が必ず減少することを示している．

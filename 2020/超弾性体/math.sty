@@ -1,0 +1,52 @@
+\usepackage{bm}
+\usepackage{color}
+\newcommand{\bd}[1]{{\mbox{\boldmath $#1$}}}
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\OMEGA}[2]{{\omega_{#1}^{#2}}}
+\newcommand{\disfrac}[2]{{\displaystyle{\frac{#1}{#2}}}}
+%\newcommand{\T}{\;{}^t\!}
+\newcommand{\lr}[1]{\left({#1} \right)}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\pmat}[1]{\begin{pmatrix} #1 \end{pmatrix}}%行列簡略化
+\newcommand{\mat}[1]{\left( \begin{matrix} #1 \end{matrix} \right)}%行列簡略化
+%\newcommand{\pmatdivone}[1]{\left(\begin{array}{c} #1 \end{array} \right)}
+%\newcommand{\pmat}[1]{\left(\begin{array}{ccc} #1 \end{array} \right)}
+\newcommand{\xiv}{\bd{\xi}}
+\newcommand{\etav}{\bd{\eta}}
+\newcommand{\zetav}{\bd{\zeta}}
+\newcommand{\bfig}{\begin{figure}}
+\newcommand{\efig}{\end{figure}}
+\newcommand{\ingraphic}{\includegraphics}
+\newcommand{\xv}{\bd{x}}
+\newcommand{\Xv}{\bd{X}}
+\newcommand{\partdf}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\Vv}{\bd{V}}
+\newcommand{\One}{I}
+\newcommand{\Two}{I\hspace{-.2em}I }
+\newcommand{\Three}{I\hspace{-.2em}I\hspace{-.2em}I}
+%\newcommand{\eqref}[1]{式(\ref{#1})}
+
+\newcount\switchcase
+\newcount\switchcasetwo
+\switchcase=0
+\switchcasetwo=1
+
+\newcommand{\chcolor}[1]{
+\ifnum\switchcase=1
+\textcolor{red}{#1}
+\else
+#1
+\fi
+}
+
+\newcommand{\chcolortwo}[1]{
+\ifnum\switchcasetwo=1
+\textcolor{red}{#1}
+\else
+#1
+\fi
+}
+
+
+

@@ -1,0 +1,44 @@
+\section{本研究のモデル化}
+	本研究では，固定されたバスト領域$ \Omega_B $において，脂肪領域$ \Omega_F $および乳腺領域$ \Omega_B \backslash \Omega_F $という二つの材料領域が占めているとする．この二つの材料特性は超弾性体であるとし，本研究ではNeo-Hooken体を利用する．
+	\begin{equation}\label{eq:NeoHookeDef}
+		W \triangleq c_1(\tilde{\One}_C - 3)
+	\end{equation}
+	この式は，大ひずみを生じる物体についてはその挙動を表すことができないことが知られているが，$ \tilde{\Two}_C $を含む項を持たないため，関数の凸性を保証することが知られている．\footnote{一般に，低減不変量$\tilde{\Two}_C$は，凸性を保証しないことが知られている．}この定義を用いて，第二Piora応力は次式で表現される．
+	\begin{equation}\label{eq:NeoHookeStrain}
+		\bd{S} = -\left(p+\frac{1}{3} c_1 \tilde{\One}_C \right) \bd{C}^{-1} + c_1 \Three_C^{-\frac{1}{3}} \bd{I}
+	\end{equation}
+	ただし$ \bd{I} $は$ 3 \times 3 $の単位行列を表す．材料の境界面における相互作用を考慮しない場合，材料特性パラメータ$ \Theta = [\rho \;\; c_1] $は物質座標$ \bd{X} $の関数として，$ \Theta(\bd{X}) $のように表現でき，脂肪の材料パラメータを$ \Theta_A $，乳腺の材料パラメータを$ \Theta_B $とすると，次式のように表される．
+	\begin{equation}\label{eq:ParamEq}
+		\Theta(\bd{X}) = \begin{cases} 
+		\Theta_A(\bd{X}) \;\;\; \bd{X} \in \Omega_F \\
+		\Theta_B(\bd{X}) \;\;\; \bd{X} \in \Omega_B \backslash \Omega_F 
+		\end{cases}
+	\end{equation}
+	本研究では，簡単な問題にするため，表面力は働かないとし，重力による体積力が働くとする．また，目的関数には，離散化された要素のひずみエネルギ密度の和を選択し，これを最小化するようにする．これを定式化すると次のように表される．
+	\begin{equation}\label{eq:DivSumEnergyDensity}
+		W(\bd{u}) = \sum_{i} W(\bd{u}^{(i)})
+	\end{equation}
+	以上より，\eqref{eq:DelLagrangeEq}で示されている$ R(\bd{u}',\bd{\lambda}) $を表すと次式のように表される．
+	\begin{equation}\label{eq:R_NeoHookeEq}
+		R(\bd{u}',\bd{\lambda}) =  \int_{\Omega_e} \bd{\lambda} \left[ \begin{matrix}
+		[\bd{B}]^T \{\bd{S} \}' \\ \{ \bd{M} \}
+		\end{matrix}\right] d\Omega 
+	\end{equation}
+	Piora応力の履歴による微分は次式で表される．
+	\begin{equation}\label{eq:S_NeoHookeEq}
+		\{ \bd{S} \}' = \left( -p' + \frac{1}{9} c_1 \tilde{\One}_C \mathrm{tr}(\bd{C}^{-1} \bd{C}') -\frac{1}{3} c_1 \Three_C^{-\frac{1}{3}}\mathrm{tr} \bd{C}' \right)\bd{C}^{-1}-\left( p + \frac{1}{3} c_1 \tilde{\One}_C \right)\bd{C}^{-1}\bd{C}'\bd{C}^{-1} - \frac{1}{3} c_1 \Three_C^{-\frac{1}{3}} \mathrm{tr}(\bd{C}^{-1} \bd{C}')
+	\end{equation}
+	なお，式の計算過程では，以下に示すように行列式および行列のトレースの微分公式を用いている．
+	\begin{eqnarray}
+		(\mathrm{det} \bd{A})' &=& \mathrm{tr} (\bd{A}^{-1} \bd{A}') \\
+		(\mathrm{tr} \bd{A})' &=&\mathrm{tr}( \bd{A}')
+	\end{eqnarray}
+	また，離散化された要素のひずみエネルギ密度の和の微分は次式で表される．
+	\begin{equation}\label{eq:EnergyDiv}
+		(\Pi(\bd{u}))' = \sum_i (W(\bd{u}^{(i)}))' = \sum_i c_1 \Three^{-\frac{1}{3}}\left(\mathrm{tr} (\bd{C}') - \frac{1}{3} I_C \mathrm{tr}(\bd{C}^{-1} \bd{C}') \right)
+	\end{equation}
+	$ \bd{C}' $については，\eqref{eq:E_eq}および\eqref{eq:E_Deri}を用いて次式のように$ \bd{u}',\bd{u} $の関数で表される．
+	\begin{equation}\label{eq:C_DeriEq}
+		\bd{C}' = \partdf{\bd{u}'}{\bd{X}} + \left(\partdf{\bd{u}'}{\bd{X}} \right)^T + \partdf{\bd{u}'}{\bd{X}} \left(\partdf{\bd{u}}{\bd{X}} \right)^T 　+ \partdf{\bd{u}}{\bd{X}} \left(\partdf{\bd{u}'}{\bd{X}} \right)^T 
+	\end{equation}
+	以上の式から，離散化した変位パラメータの微分$ \{\bd{u}'\} $を有限要素法により求めることができることを示した．

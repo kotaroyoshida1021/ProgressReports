@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}機械学習の手法について}{1}
+\contentsline {subsection}{\numberline {1.1}緒論}{1}
+\contentsline {subsection}{\numberline {1.2}問題へのアプローチ}{2}
+\contentsline {subsection}{\numberline {1.3}機械学習の概要}{2}
+\contentsline {subsection}{\numberline {1.4}カップのデータについて}{2}
+\contentsline {subsection}{\numberline {1.5}データの識別}{2}
+\contentsline {subsection}{\numberline {1.6}事前学習データの作成}{3}
+\contentsline {subsection}{\numberline {1.7}本研究における最終目的と課題}{3}
+\contentsline {subsection}{\numberline {1.8}問題点に対するアプローチ}{3}
+\contentsline {section}{\numberline {2}布物性のシミュレーションについて}{4}
+\contentsline {section}{\numberline {3}その他}{4}
+\contentsline {section}{\numberline {4}ガウス過程について}{5}
+\contentsline {subsection}{\numberline {4.1}ガウス過程の概要}{5}
+\contentsline {subsection}{\numberline {4.2}クラスタリングについて}{6}
+\contentsline {subsection}{\numberline {4.3}ベイズ最適化について}{6}

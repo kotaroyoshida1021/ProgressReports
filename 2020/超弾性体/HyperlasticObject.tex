@@ -1,0 +1,137 @@
+\section{超弾性体とは}
+本章では，超弾性体の基本的な事項および，その弱形式の導出までを行う．
+\subsection{はじめに}
+ある物体の実座標系$ \bd{x} $に対し，物質座標系$ \bd{X} $の微小変化の関係が
+\begin{equation}\label{eq:FloryTensor}
+	d\bd{x} = \bd{F}d\bd{X}
+\end{equation}
+と表されるとする．この$ \bd{F} $を変形勾配テンソルと呼ぶ．このテンソルを用いて，$ \bd{C},\bd{B} $を以下のように定義する．
+\begin{eqnarray}\label{eq:CandB_Define}
+	\bd{C} &=& \bd{F}^T \cdot \bd{F} \\
+	\bd{B} &=& \bd{F} \cdot \bd{F}^T
+\end{eqnarray}
+この$ \bd{C} $を右コーシーグリーン変形テンソル，$ \bd{B} $を左コーシーグリーン変形テンソルと呼ぶ．
+
+これを用いてグリーン・ラグランジュひずみテンソル$ \bd{E} $は
+\begin{equation}\label{eq:E_eq}
+	\bd{E}=\frac{1}{2} (\bd{C}-\bd{I})
+\end{equation}
+と表される．また，アルマンドひずみテンソル$ \bd{A} $は
+\begin{equation}\label{eq:Aeq}
+	\bd{A} = \frac{1}{2} (\bd{I}-\bd{B}^{-1})
+\end{equation}
+と表される．この二つのひずみは変位$ \bd{u} $と物体の位置ベクトル$ \bd{X},\bd{x} $を用いて以下のように表される．
+\begin{eqnarray}\label{eq:E_Deri}
+	\bd{E} &=& E_{ij} \bd{e}_i \otimes \bd{e}_j = \frac{1}{2} \left\{ \partdf{u_i}{X_j} + \partdf{u_j}{X_i} + \partdf{\bd{u}}{X_i} \partdf{\bd{u}}{X_j} \right\} \bd{e}_i \otimes \bd{e}_j \\
+	\bd{A} &=& E_{ij} \bd{e}_i \otimes \bd{e}_j = \frac{1}{2} \left\{ \partdf{u_i}{x_j} + \partdf{u_j}{x_i} + \partdf{\bd{u}}{x_i} \partdf{\bd{u}}{x_j} \right\} \bd{e}_i \otimes \bd{e}_j
+\end{eqnarray}
+\subsection{超弾性体とは}
+超弾性体とは，変形やひずみの成分で微分することにより，共役な応力成分が得られる弾性ポテンシャル関数$ W $が存在する物質として，以下のように定義される．
+\begin{equation}\label{eq:StrainEq}
+	S_{ij} = \partdf{W}{E_{ij}}
+\end{equation}
+\eqref{eq:E_eq}より，$ \bd{C} $を用いて表現すると
+\begin{equation}\label{eq:StrainEq2}
+	S_{ij} = 2\partdf{W}{C_{ij}}
+\end{equation}
+テンソル$ \bd{C} $に関する不変量として，以下の関数を定義する．
+
+\begin{eqnarray}\label{eq:NoChangedC}
+	\One_C &=& \mathrm{tr}\bd{C} \\
+	\Two_C &=& \frac{1}{2} (\One_C^2 - \mathrm{tr}(\bd{C}^2)) \\
+	\Three_C &=& \mathrm{det} \bd{C}
+\end{eqnarray}
+
+これらの$ C_{ij} $に関する偏微分は次式らであらわされる．
+\begin{eqnarray}\label{eq:PartialChangedC}
+	\partdf{\One_C}{C_{ij}} &=& \delta_{ij} \\
+	\partdf{\Two_C}{C_{ij}} &=& \One_C \delta_{ij}-C_{ij} \\
+	\partdf{\Three_C}{C_{ij}} &=& \Three_C(\bd{C}^{-1})_{ij}
+\end{eqnarray}
+これらを用いて$ W $が表現されるとすれば，応力成分$ S_{ij} $は微分の連鎖律を用いて次のように表現される．
+
+\begin{eqnarray}\label{eq:StrainVer2}
+	S_{ij} &=& 2\left\{	\partdf{I_C}{C_{ij}} \partdf{W}{I_C} + \partdf{\Two_C}{C_{ij}} \partdf{W}{\Two_C} + \partdf{\Three_C}{C_{ij}} \partdf{W}{\Three_C} \right\} \\
+	&=& 2\left\{	(\partdf{W}{I_C} +  \partdf{W}{\Two_C} I_C)\delta_{ij} - \partdf{W}{\Two_C}C_{ij} +  \partdf{W}{\Three_C} \Three_C(\bd{C}^{-1})_{ij}\right\}
+\end{eqnarray}
+
+以降では，定式化において非圧縮性を仮定する．
+
+非圧縮性の物質の場合，等方的な外力を加えると，体積が変化しないまま内部応力が生じる．この場合，変位とは別に非決定応力（不定静水圧）を独立な変数としてとる必要があり，これを$ p $と置く．この場合，適切なひずみエネルギー密度$ W $を選択しなければ，無変形状態($ C_{ij}  = \delta_{ij}$)においては$ p $が初期値を持つという不具合が生じる．このようなことが起こらないために，例えばMooney-Rivlin体などでは，\eqref{eq:NoChangedC}に対し，次のような不変量を用いることで，この問題を解決する手法が提案されている．
+\begin{eqnarray}
+	\tilde{\One}_C &=& \One_C \Three_C^{-\frac{1}{3}} \\
+	\tilde{\Two}_C &=& \Two_C \Three_C^{-\frac{2}{3}}
+\end{eqnarray}
+この二つもまた不変量であり，低減不変量と呼ばれる．
+
+\subsection{超弾性体における有限要素法の弱形式}
+非圧縮の超弾性体でモデル化される物体について，次のような境界値問題を考える．物体が占める領域を$ \Omega $，その境界を$ \partial \Omega $として，$ \partial \Omega_D $の変位境界条件が与えられているとする．表面力を$ \bd{t} $，体積力を$ \rho_0 \bd{g} $が作用するとき，全ポテンシャルエネルギー$ \Phi $は次式であらわされる．
+\begin{equation}\label{eq:PotentialEq}
+	\Phi = \int_{\Omega} W d\Omega - \int_{\partial \Omega} \bd{t} \cdot \bd{u} dS - \int_{\Omega} \rho_0\bd{g} \cdot \bd{u} d\Omega
+\end{equation}
+非圧縮性に関する制約式は$ \Three_C = 0 $で表現されることから，ラグランジュ関数を用いて，ポテンシャルエネルギー式は次のように再表現される．
+\begin{equation}\label{eq:PotentialReEq}
+	\Phi = \Phi + \lambda \int_{\Omega} f(\Three_C) d\Omega
+\end{equation}
+ただし$ f(x) $は$ f(1)=0 $を満たし，$ \partdf{f}{x}=1 $を満たす関数である．停留ポテンシャルエネルギーの原理により，次式を満たす．
+\begin{eqnarray}\label{eq:DeltaPotentialEq}
+	\delta \Phi &=& \int_{\Omega} \partdf{W}{C_{ij}} \delta C_{ij} d\Omega + \int_{\Omega} \left( \lambda \partdf{f}{C_{ij}} \delta C_{ij} + \delta \lambda f \right)d \Omega -\int_{\partial \Omega} \bd{t}\cdot \delta \bd{u} dS - \int_{\Omega} \rho_0 \bd{g} \cdot \delta \bd{u} d\Omega \\
+	&=& \int_{\Omega} \left( \partdf{W}{C_{ij}} + \lambda \partdf{f}{C_{ij}}\right) \delta C_{ij} d\Omega -  \int_{\partial \Omega} \bd{t} \cdot \delta \bd{u} dS - \int_{\Omega} \rho_0\bd{g} \cdot \delta \bd{u} d\Omega
+\end{eqnarray}
+また，以下の式が成り立つ．
+\begin{equation}\label{eq:ConstraintEq}
+	\int_{\Omega} \delta \lambda f d\Omega =0
+\end{equation}
+この式を簡単に表記すると以下のようになる．
+\begin{equation}\label{eq:SimplyPotential}
+	\int_{\Omega} \delta E_{ij} S_{ij} d\Omega = \delta R
+\end{equation}
+左辺については，$ \delta E_{ij} S_{ij} $が$ i,j $に関して対称であることから，要素ベクトル$ \{\delta \bd{E} \},\{\bd{S} \} $を用いて次式のように表される．
+\begin{equation}\label{eq:Tensor_to_Vector}
+	\delta E_{ij} S_{ij} = \pmat{\delta E_{11}&\delta E_{22} & \delta E_{33} & \delta E_{12} & \delta E_{23} & \delta E_{31} } \pmat{S_{11}\\S_{22} \\ S_{33} \\ S_{12} \\ S_{23} \\ S_{31} } = \{\delta \bd{E} \}^T \{\bd{S} \}
+\end{equation}
+\eqref{eq:SimplyPotential}の積分区間を分割する．
+\begin{equation}\label{eq:SimPtn_Div}
+	\int_{\Omega} \delta E_{ij} S_{ij} d\Omega = \sum_{e} \int_{\Omega_e} \{\delta \bd{E} \}^T \{\bd{S} \} d\Omega 
+\end{equation}
+ただし，$ \delta E_{ij} $は以下のように表される．
+\begin{equation}\label{eq:DeltaEeq}
+	\delta E_{ij} = \frac{1}{2} \left\{ \partdf{\delta u_i}{X_j} + \partdf{\delta u_j}{X_i} + \partdf{\delta \bd{u}}{X_i} \partdf{\bd{u}}{X_j} + \partdf{\bd{u}}{X_i} \partdf{\delta \bd{u}}{X_j} \right\} \triangleq [\bd{Z}_1]\left\{ \partdf{\delta u}{X}\right\}
+\end{equation}
+さらに，変位の微分を以下のように補間関数$ N^{(n)} $を用いて補完することを考える．
+\begin{eqnarray}\label{eq:InterpolateU}
+	\partdf{u_i}{X_j} &=& \partdf{N^{(n)}}{X_j} u_i^{(n)} \\
+	\partdf{u}{\bd{X}} &=& [\bd{Z}_2]\{ \delta u^{(n)} \}
+\end{eqnarray}
+となり，$ [\delta \bd{E}] $はこれらを用いて以下のように表される．
+\begin{equation}\label{eq:delta_E_using_B}
+	\{\delta \bd{E} \} = [\bd{Z}_1] [\bd{Z}_2]\{ \delta u^{(n)} \} \triangleq [\bd{B}] \{ \delta u^{(n)} \}
+\end{equation}
+\eqref{eq:delta_E_using_B}を用いて\eqref{eq:SimPtn_Div}を書き直すと次式で表される．
+\begin{equation}\label{eq:SimPtn_Div}
+ \sum_{e} \int_{\Omega_e} \{\delta \bd{E} \}^T \{\bd{S} \} d\Omega =  \sum_{e} \{ \delta u^{(n)} \}^T \int_{\Omega_e} [\bd{B}]^T \{\bd{S} \} d\Omega
+\end{equation}
+また，\eqref{eq:DeltaPotentialEq}の外力項は以下のように表される．
+\begin{equation}\label{eq:ExWorkEq}
+	 \int_{\partial \Omega} \bd{t} \cdot \delta \bd{u} dS + \int_{\Omega} \rho_0\bd{g} \cdot \delta \bd{u} d\Omega = \sum_{e} \{ \delta u^{(n)} \}^T \left(\int_{\partial \Omega_e} [\bd{N}]^T \bd{t} dS + \int_{\Omega_e}[\bd{N}]^T \rho_0 \bd{g} d\Omega\right)
+\end{equation}
+さらに，ラグランジュの変位に関する式は
+\begin{equation}\label{eq:ConstDelLagEq}
+	\int_{\Omega} \delta \lambda f d\Omega = \sum_{e} \int_{\Omega_e} \delta \lambda f d\Omega =  \sum_{e} \{ \delta \lambda^{(m)} \}^T \int_{\Omega_e} \{ \bd{M} \} f d\Omega
+\end{equation}
+と計算される．ここで，$ \{ \delta u \}^T =\{\{ \delta u^{(n)} \}^T \;\; \{ \delta \lambda^{(m)} \}^T\} $を定義すると，\eqref{eq:SimplyPotential}は一つの弱形式の式として次式で表される．
+\begin{equation}\label{eq:SimplyPotentialWeak}
+	\sum_{e} \{ \delta u \}^T[\bd{U}(u)-\bd{F}(u) ]=0
+\end{equation}
+ただし，$ \bd{U}(u), \bd{F}(u) $は次式らで定義している．
+\begin{eqnarray}
+	 \bd{U}(u) &=& \int_{\Omega_e} \left[ \begin{matrix}
+	 [\bd{B}]^T \{\bd{S} \} \\ \{ \bd{M} \}
+	 \end{matrix}\right] d\Omega \\
+	 \bd{F}(u) &=& \int_{\partial \Omega_e} \left[ \begin{matrix}
+	 [\bd{N}]^T \bd{t} \\ \bd{0}^{(m)}
+	 \end{matrix}\right] dS + \int_{\Omega_e}
+	\left[ \begin{matrix}
+	[\bd{N}]^T \rho_0 \bd{g} \\ \bd{0}^{(m)}
+	\end{matrix}\right]	 d\Omega
+\end{eqnarray}
