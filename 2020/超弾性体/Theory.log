@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  28 FEB 2020 22:46
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  27 JAN 2021 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,49 +257,18 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 6.72699pt on input line 4.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 4.805pt on input line 4.
- [2] [3] [4]) (./TractionMethod.tex
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 11.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 11.
- [5] [6]
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 63.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 63.
-
-
-LaTeX Warning: Reference `eq:J_Div,eq:J_Div2' on page 7 undefined on input line
- 63.
-
-[7]) (./OptimizationProblem.tex
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 6.
- [8]
-Overfull \hbox (51.35596pt too wide) detected at line 30
-\OMS/cmsy/m/n/10 f[]g[] \OT1/cmr/m/n/10 = [] [][] \OMS/cmsy/m/n/10 ^^@ [] [][][
-][][][] ^^@ []\OML/cmm/m/it/10 c[]I I I[][]\OT1/cmr/m/n/10 ([][][][])
- []
-
-) [9] (./Theory.aux)
-
-LaTeX Warning: There were undefined references.
-
+ [2] [3] [4]) [5] (./Theory.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2427 strings out of 492759
- 28385 string characters out of 6143227
+ 2390 strings out of 492759
+ 27757 string characters out of 6143227
  103183 words of memory out of 5000000
- 6832 multiletter control sequences out of 15000+600000
- 24051 words of font info for 105 fonts, out of 8000000 for 9000
+ 6801 multiletter control sequences out of 15000+600000
+ 23295 words of font info for 101 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 30i,16n,31p,660b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,16n,31p,619b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Theory.dvi (9 pages, 36432 bytes).
+Output written on Theory.dvi (5 pages, 17764 bytes).
