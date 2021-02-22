@@ -1,8 +1,8 @@
-\contentsline {section}{\numberline {1}研究進捗について}{1}{}%
-\contentsline {subsection}{\numberline {1.1}研究会進捗}{1}{}%
-\contentsline {section}{\numberline {2}定式化の流れ}{1}{}%
-\contentsline {subsection}{\numberline {2.1}修正作業の定義}{1}{}%
-\contentsline {subsection}{\numberline {2.2}定式化}{2}{}%
-\contentsline {subsection}{\numberline {2.3}論文調べ}{2}{}%
-\contentsline {subsection}{\numberline {2.4}D論スケジュールや構成・どこまで範囲を広げるか}{2}{}%
-\contentsline {section}{\numberline {3}To Do List}{3}{}%
+\contentsline {section}{\numberline {1}研究進捗について}{1}%
+\contentsline {subsection}{\numberline {1.1}研究会進捗}{1}%
+\contentsline {section}{\numberline {2}定式化の流れ}{1}%
+\contentsline {subsection}{\numberline {2.1}修正作業の定義}{1}%
+\contentsline {subsection}{\numberline {2.2}定式化}{2}%
+\contentsline {subsection}{\numberline {2.3}論文調べ}{2}%
+\contentsline {subsection}{\numberline {2.4}D論スケジュールや構成・どこまで範囲を広げるか}{2}%
+\contentsline {section}{\numberline {3}To Do List}{2}%

@@ -1,0 +1,28 @@
+\section{入力をなぜGPで表現したか}
+			タイトルの件について，おそらく研究会の説明等では不足であると考え，追記します．
+			
+			この表現の目的はある関数$ f(x) $の特徴を記述するパラメータを入力パラメータとしたいと考えたところから出発します．最も単純で馴染みの深い方法としては，下記のように$ f(x) $を基底関数$ \bd{\phi} = \{ \phi_i(x) \} $の重み付き線形和によって表現する方法です．
+			\begin{equation}\label{eq:LinearEq}
+				f(x) = \sum_{i=0}^{N} w_i \phi_i(x)  = \bd{\phi} \bd{w}
+			\end{equation}
+			入力のデータセット$ \bd{x} = \{x_i\} $出力データセット$ \bd{\hat{f}} = \{\hat{f}_i\}$が与えられている場合，$ \bd{w} $は次のような二乗誤差を最小化することで得られる．
+			\begin{equation}\label{eq:ErrorToMinimize}
+				E =  \sum_{i=0}^{N} (\hat{f}_i - \sum_{j=0}^{N} w_j \phi_j(x_i))^2
+			\end{equation}
+			しかしこの場合，$ \dim(\bd{w}) $をどの程度であればよいのかは関数毎に設定が必要である点や，パラメータの次元が増加してしまう，などの問題があります．
+			
+			ガウス過程では，この$ \bd{w} $があるガウス分布$ \mathcal{N}(\bd{0},\lambda^2 \bd{I}) $から生成されたものと仮定します．この場合，出力の$ f $もまたガウス分布に従います．平均と分散はそれぞれ次式のように計算されます．
+			\begin{equation}\label{eq:Avg}
+				\bd{m} = \mathbb{E}(f(x)) = \bd{\phi} \cdot \mathbb{E}( \bd{w}) = \bd{0}
+			\end{equation}
+			\begin{equation}\label{eq:Var}
+				\bd{\sigma} = \mathbb{E}(\bd{f} - \bd{m})^2 = \lambda^2  \bd{\Phi}  \bd{\Phi}^{\mathrm{T}}
+			\end{equation}
+			ただし，$ \bd{\Phi} =\{\phi_j(x_i) \}$とおいております．これを$ \bd{K} = \lambda^2  \bd{\Phi}  \bd{\Phi}^{\mathrm{T}} $とおくと$ \bd{K} $は$ f $の共分散行列となり，$ f $はガウス分布$ \mathcal{N}(\bd{0},\bd{K}) $に従い，$ \bd{K} $の各成分は$ k_{i,j} = \bd{\phi}(x_i) \bd{\phi}^{\mathrm{T}}(x_j) $となります．この時$ f $のガウス分布を求めるためには，$ \bd{\phi} $を設計するのではなく，$ k_{i,j} $を直接設計すればよいことが分かります．このようなテクニックはカーネルトリックと呼ばれ，$ k_{i,j} $をカーネル関数と呼びます．
+			
+			重要な点は2点で，一つは$ \dim(\bd{\phi}) $の次元が無限としても，$ k_{i,j} $が有限の値を持つようであれば構わないという点で，もう一つの点は，ガウス過程の出発が基底関数の線形和で表すというRitz法と考え方が等価である点です．
+			
+			したがって，カーネル関数を決定するいくつかのパラメータを適切に設定さえすれば，$ f $をガウス分布によって表現でき，これにより，パラメータの次元増加を避けることができると考えられます．カーネル関数のパラメータを求める際には，対数尤度最適の考え方が用いられ，確率分布の対数をとった関数が最大化するようにパラメータを最適化します．
+			\begin{equation}\label{eq:Suudo}
+			\log(p) = -\log|\bd{K}_{\theta}| - \bd{y}^T \bd{K}_{\theta}^{-1} \bd{y}+C
+			\end{equation}
