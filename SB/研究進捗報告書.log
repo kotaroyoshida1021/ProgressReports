@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  14 MAR 2021 20:47
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  15 MAR 2021 16:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,24 +384,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--44
 
  []
 
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
+(Font)              scaled to size 6.72699pt on input line 45.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 45.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [1
 
-] [2] [3] (./研究進捗報告書.aux) ) 
+] [2] (./研究進捗報告書.aux) ) 
 Here is how much of TeX's memory you used:
- 4491 strings out of 492759
- 60138 string characters out of 6143227
- 142506 words of memory out of 5000000
- 8896 multiletter control sequences out of 15000+600000
- 14651 words of font info for 68 fonts, out of 8000000 for 9000
+ 4516 strings out of 492759
+ 60414 string characters out of 6143227
+ 146506 words of memory out of 5000000
+ 8912 multiletter control sequences out of 15000+600000
+ 16425 words of font info for 73 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 53i,11n,50p,362b,305s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,50p,450b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 研究進捗報告書.dvi (3 pages, 10632 bytes).
+Output written on 研究進捗報告書.dvi (2 pages, 7856 bytes).

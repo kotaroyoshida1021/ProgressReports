@@ -1,0 +1,102 @@
+\documentclass[16pt]{jsarticle}
+
+\usepackage{SPR}
+
+\headerSPR
+\begin{document}
+	\titleSPR{\number\year}{\number\month}{\number\day}{D2}{吉田　皓太郎}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\articleSPRabst
+	%	\begin{itemize}
+	%		\item　＝どういう事態か
+	%	\end{itemize}
+		
+%今回のMTGの目的，何をディスカッションし，結果に何を得たいのかを決定する．※ミーティングごとに記入
+	\articleSPRobj
+		今回のMTGでは，D論の構成を現状までに達成された項目に基づき考察・再構築したものを記載しており，先生の意見を踏まえD論構成を確定させたいと考えている．また，そのD論構成に基づいた時，残りの少ない時間で何を行うべきかを議論し，今後の計画へと繋げたいと考えている．
+		
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　1.前回からのノルマ
+	\articleSPRitemsone
+		%\begin{enumerate}
+		%	\item A
+		%\end{enumerate}
+		
+		\tableofcontents
+		
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%	\item 新規手法について
+%	\item ISFAアウトライン
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　2.具体的な成果
+	\articleSPRitemstwo
+	\renewcommand{\labelitemi}{$\blacktriangledown$}
+	%\renewcommand{\labelitemi}{$\bigcirc$}
+	\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+	\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+	\newcommand{\Ker}{{\rm Ker}}
+	\newcommand{\rank}{{\rm rank}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{【予備】局所修正法について}
+		$ s=s_c $の点を方向$ \bd{d} $に$ \varepsilon_c $だけ動かすとき，$ \varepsilon $は次式のように表された．
+		\begin{equation}\label{eq:epsEq}
+			\varepsilon(s) = \varepsilon_c \exp \left(-\int_{s_c}^{s} \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} \mathrm{sgn}(\bd{d}\cdot \bd{\eta}) ds \right)
+		\end{equation}
+		この式を少し変えて，$ \varepsilon_c $および$ s_c $が$ s $に関する分布を持つと想定する．つまり
+		\begin{equation}\label{eq:epsEq2}
+			\varepsilon(s) = \tilde{\varepsilon}_c \exp \left(-\int_{\tilde{s}_c}^{s} \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} \mathrm{sgn}(\bd{d}\cdot \bd{\eta}) ds \right)
+		\end{equation}
+		と表されると仮定する．この式が，$ \varepsilon $を導出した過程の微分方程式を満たすならば次式が成り立つ．
+		\begin{equation}\label{eq:epsdiffeq2}
+			\frac{\tilde{\varepsilon}_c'}{\tilde{\varepsilon}_c} + \tilde{s}_c \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} = 0
+		\end{equation}
+		この式は，$ \tilde{\varepsilon}_c $に関してならば解析的に解くことができる．また，前述の制約条件を基に考えるならば
+		\begin{equation}\label{eq:tildeepsEq}
+			\tilde{\varepsilon}_c(s) = \varepsilon_c \exp \left(-\int_{\tilde{s}_c (s_c)}^{\tilde{s}_c(s)} \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} \mathrm{sgn}(\bd{d}\cdot \bd{\eta}) ds \right)
+		\end{equation}
+		と表される．局所的な変形を仮定するならば$ \tilde{s}_c $は
+		\begin{equation}\label{eq:ObjepsEq}
+			\tilde{s}_c　= \argmin \int_{0}^{L} \varepsilon^2 ds 
+		\end{equation}
+		を満たす．
+		$ \tilde{s}_c $を，$ 0<\tilde{s}_c<L, \tilde{s}_c(s_c) = s_c $を満たすように設計することを考える．
+		
+		最適化問題を解くにあたっては，次のような候補が考えられる．
+		
+		一つ目の方法は，あえて$ \tilde{s}_c $を点群として表し，これを最適化における設計変数であるとモデル化する．必要な時には適当な補間方法で補間して関数として扱うこともできるようにする．最適化には，設計変数の境界付き最適化手法を用いることができるため，計算を短縮できることが期待される．もう一つの方法は，前述した制約を満たすためにラグランジュ乗数で今まで通り行うこと，そして最後はうまく関数を工夫し制約なし問題に帰結させることである．
+		
+		3つの手法を計算時間と関数の連続性および実装の容易さといった観点からまとめると次の通りである．
+		\begin{table}[!h]
+			\centering
+			\begin{tabular}{|c|c|c|c|} \hline
+				 手法と方法&離散化&ラグランジュ乗数法&関数の工夫 \\ \hline
+				 計算時間&$ \bigcirc $&$ \bigtriangleup	 $($\times$) &$ \bigcirc $ \\ \hline
+				 連続性&$ \bigtriangleup$ (厳密には$\times$)&$ \bigcirc $&$ \bigcirc $\\ \hline
+				 容易さ&$ \bigtriangleup$? &$ \bigcirc $&$ \times $\\ \hline
+			\end{tabular}
+		\end{table}
+		
+		
+	\section{次回のMTGについて（終了後記載）}
+	\begin{itemize}
+		\item  
+		\item 
+	\end{itemize}
+	＃＃＃
+	\newpage
+%\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%　3.達成できなかったこととその問題点
+	%\articleSPRthree
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{14cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\articleSPRfour
+	%\articleSPRfive
+\end{document}
