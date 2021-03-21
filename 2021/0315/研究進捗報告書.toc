@@ -1,4 +1,3 @@
-\contentsline {section}{\numberline {1}連絡}{1}%
-\contentsline {section}{\numberline {2}【関連】現状で達成されていることのまとめ}{1}%
-\contentsline {section}{\numberline {3}D論構成}{2}%
-\contentsline {section}{\numberline {4}次回のMTGについて（終了後記載）}{3}%
+\contentsline {section}{\numberline {1}【関連】現状で達成されていることのまとめ}{1}%
+\contentsline {section}{\numberline {2}D論構成}{1}%
+\contentsline {section}{\numberline {3}次回のMTGについて（終了後記載）}{2}%
