@@ -42,43 +42,53 @@
 	\newcommand{\rank}{{\rm rank}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{【予備】局所修正法について}
-		$ s=s_c $の点を方向$ \bd{d} $に$ \varepsilon_c $だけ動かすとき，$ \varepsilon $は次式のように表された．
-		\begin{equation}\label{eq:epsEq}
-			\varepsilon(s) = \varepsilon_c \exp \left(-\int_{s_c}^{s} \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} \mathrm{sgn}(\bd{d}\cdot \bd{\eta}) ds \right)
-		\end{equation}
-		この式を少し変えて，$ \varepsilon_c $および$ s_c $が$ s $に関する分布を持つと想定する．つまり
-		\begin{equation}\label{eq:epsEq2}
-			\varepsilon(s) = \tilde{\varepsilon}_c \exp \left(-\int_{\tilde{s}_c}^{s} \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} \mathrm{sgn}(\bd{d}\cdot \bd{\eta}) ds \right)
-		\end{equation}
-		と表されると仮定する．この式が，$ \varepsilon $を導出した過程の微分方程式を満たすならば次式が成り立つ．
-		\begin{equation}\label{eq:epsdiffeq2}
-			\frac{\tilde{\varepsilon}_c'}{\tilde{\varepsilon}_c} + \tilde{s}_c \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} = 0
-		\end{equation}
-		この式は，$ \tilde{\varepsilon}_c $に関してならば解析的に解くことができる．また，前述の制約条件を基に考えるならば
-		\begin{equation}\label{eq:tildeepsEq}
-			\tilde{\varepsilon}_c(s) = \varepsilon_c \exp \left(-\int_{\tilde{s}_c (s_c)}^{\tilde{s}_c(s)} \frac{|s_U' \zetav_U \times \zetav_L|}{|\xv_U - \xv_L| \cos \alpha} \mathrm{sgn}(\bd{d}\cdot \bd{\eta}) ds \right)
-		\end{equation}
-		と表される．局所的な変形を仮定するならば$ \tilde{s}_c $は
-		\begin{equation}\label{eq:ObjepsEq}
-			\tilde{s}_c　= \argmin \int_{0}^{L} \varepsilon^2 ds 
-		\end{equation}
-		を満たす．
-		$ \tilde{s}_c $を，$ 0<\tilde{s}_c<L, \tilde{s}_c(s_c) = s_c $を満たすように設計することを考える．
+		前回のMTGではそもそも計算の定義が間違っており，実行できませんでした．
 		
-		最適化問題を解くにあたっては，次のような候補が考えられる．
+		今までとそこまで解法の変わり映えしないという理由もあり，修正アルゴリズムを提案したいと考えております．このアルゴリズムでは，SCIで発表したように一度に変形させるのではなく，有限の修正操作を繰り返すことで点を満たすように移動することを考えたいと思います．
 		
-		一つ目の方法は，あえて$ \tilde{s}_c $を点群として表し，これを最適化における設計変数であるとモデル化する．必要な時には適当な補間方法で補間して関数として扱うこともできるようにする．最適化には，設計変数の境界付き最適化手法を用いることができるため，計算を短縮できることが期待される．もう一つの方法は，前述した制約を満たすためにラグランジュ乗数で今まで通り行うこと，そして最後はうまく関数を工夫し制約なし問題に帰結させることである．
+		それを踏まえて，一度今までの式を振り返ります．
+		ある$ \varepsilon_c $および$ \bd{d} $に対して，修正後の長さ分布$ \varepsilon(s) $は，$ \bd{d} $が$ s $によって変化しない仮定の下で次式で表されます．
+		\begin{equation}\label{eq:varDiffeq}
+			\varepsilon' = -\frac{|u'\zetav_U\times \zetav_L|}{D \cos \alpha} \mathrm{sgn}((\zetav_L \times \zetav_U) \cdot \etav)\varepsilon := \sigma \varepsilon
+		\end{equation}
 		
-		3つの手法を計算時間と関数の連続性および実装の容易さといった観点からまとめると次の通りである．
-		\begin{table}[!h]
-			\centering
-			\begin{tabular}{|c|c|c|c|} \hline
-				 手法と方法&離散化&ラグランジュ乗数法&関数の工夫 \\ \hline
-				 計算時間&$ \bigcirc $&$ \bigtriangleup	 $($\times$) &$ \bigcirc $ \\ \hline
-				 連続性&$ \bigtriangleup$ (厳密には$\times$)&$ \bigcirc $&$ \bigcirc $\\ \hline
-				 容易さ&$ \bigtriangleup$? &$ \bigcirc $&$ \times $\\ \hline
-			\end{tabular}
-		\end{table}
+		この式が$ s = s_c $で$ \varepsilon=\varepsilon_c $を取るならば，一意に
+		\begin{equation}\label{eq:vareq}
+			\varepsilon = \varepsilon_c \exp \left[ \int_{s_c}^{s} \sigma ds \right]
+		\end{equation}
+		と表されます．
+		
+		$ n $回目の操作の時の空間座標位置は$ \xv_{U,n} = \xv_U + \sum_{j=1}^{n} \varepsilon_i \bd{d}_i$と表され，この時，局所修正を想定するときには下記の要求を満たす必要があります．
+		\begin{itemize}
+			\item $ \int |\sum_{j=1}^{n} \varepsilon_j \bd{d}_j|^2 ds  $が最小であること
+			\item $ \xv_{U,n}(s_c) = \bd{C} $であること
+			\item $ \varepsilon $は$ s=s_c $で極値$ \varepsilon_c $をとる．
+		\end{itemize}
+		これを踏まえて，修正アルゴリズムを以下のように提案します．
+		
+		順におって説明します．漸化式的に，$i$の情報から$ i+1 $の条件を求めます．
+		まずはじめに，$ \sigma_i(s_c)=0 $を確認します．これは定義式から見れる通り，現在のステップ$ \bd{d}_{i+1} $に依存しません．そのため，$ s=s_c $が極値をとる条件であるとは限りません．（少なくとも初期値ではそう）この場合，レトラクションという定義する操作を行います．
+		
+		レトラクションという操作は次の条件を満たすように曲線を変形させます．はじめに，$ \sigma_i(s_p) =0$を満たす$ s_p $を求めます．次に，$ s=s_p $の時にある$ \varepsilon_{c,p} $だけ動かし，$ s=s_c $の時に極値をとるようにする．つまり，
+		\begin{equation}\label{eq:CylinderEq}
+			|\tilde{\zetav}_U \times \zetav_L| = 0
+		\end{equation}
+		これを満たすもののうち，$ \varepsilon_{c,p} \rightarrow \min $を満たすような$ \varepsilon_{c,p},\theta_p,\phi_p $を求めた上で，曲線を変形させます．この操作をレトラクションを定義しています．
+		
+		次に，$ s=s_c $で極値をとる仮定で話を進めます．この時，$ \phi_{i+1},\theta_{i+1},\varepsilon_{c,i+1} $に従って曲線を変形させる時，局所修正の1番目の条件より，三つの変数は以下を満たします．
+		\begin{equation}\label{eq:FirstAmendEq}
+			 \int |\sum_{j=1}^{i+1} \varepsilon_j \bd{d}_j|^2 ds
+		\end{equation}
+		これを$ \bd{\delta}_i =  \sum_{j=1}^{i} \varepsilon_j \bd{d}_j$とおき展開すると次式が成り立つ．
+		
+		\begin{equation}\label{eq:FirstAmendEqVer2}
+			\varepsilon_{c,i+1}^2 \int_{0}^{L} \exp \left(2 \int_{s_c}^s \sigma_i \right) ds + 2 \varepsilon_{c,i+1} \int_{0}^{L} \exp \left( \int_{s_c}^s \sigma_i \right) \bd{d}_{i+1} \cdot \bd{\delta}_i ds + \int_{0}^{L} |\bd{\delta}_i|^2 ds 
+		\end{equation}
+		これは，シンプルな二次関数と捉えることもできる．つまり，$ \varepsilon_{c,i+1} $が最小となるときは，
+		\begin{equation}\label{eq:eps_i+1eq}
+			\varepsilon_{c,i+1} = - \frac{\int_{0}^{L} \exp \left( \int_{s_c}^s \sigma_i \right) \bd{d}_{i+1} \cdot \bd{\delta}_i ds}{\int_{0}^{L} \exp \left(2 \int_{s_c}^s \sigma_i \right) ds}
+		\end{equation}
+		
 		
 		
 	\section{次回のMTGについて（終了後記載）}
