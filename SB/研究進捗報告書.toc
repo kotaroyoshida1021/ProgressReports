@@ -1,2 +1,3 @@
-\contentsline {section}{\numberline {1}【予備】局所修正法について}{1}{}%
-\contentsline {section}{\numberline {2}次回のMTGについて（終了後記載）}{2}{}%
+\contentsline {section}{\numberline {1}【予備】局所修正法について}{1}%
+\contentsline {section}{\numberline {2}【メモ用】オイラー角表記}{3}%
+\contentsline {section}{\numberline {3}次回のMTGについて（終了後記載）}{3}%

@@ -66,29 +66,58 @@
 		\end{itemize}
 		これを踏まえて，修正アルゴリズムを以下のように提案します．
 		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.6\columnwidth]{figure/AmendFlow.png}
+			\caption{A flow chart}
+		\end{figure}
+		
 		順におって説明します．漸化式的に，$i$の情報から$ i+1 $の条件を求めます．
 		まずはじめに，$ \sigma_i(s_c)=0 $を確認します．これは定義式から見れる通り，現在のステップ$ \bd{d}_{i+1} $に依存しません．そのため，$ s=s_c $が極値をとる条件であるとは限りません．（少なくとも初期値ではそう）この場合，レトラクションという定義する操作を行います．
 		
 		レトラクションという操作は次の条件を満たすように曲線を変形させます．はじめに，$ \sigma_i(s_p) =0$を満たす$ s_p $を求めます．次に，$ s=s_p $の時にある$ \varepsilon_{c,p} $だけ動かし，$ s=s_c $の時に極値をとるようにする．つまり，
 		\begin{equation}\label{eq:CylinderEq}
-			|\tilde{\zetav}_U \times \zetav_L| = 0
+			|\tilde{\zetav}_{U,i} \times \zetav_L| = 0
 		\end{equation}
-		これを満たすもののうち，$ \varepsilon_{c,p} \rightarrow \min $を満たすような$ \varepsilon_{c,p},\theta_p,\phi_p $を求めた上で，曲線を変形させます．この操作をレトラクションを定義しています．
+		ただし，チルダ記号は修正後であると定義しています．ここで，$ \bd{d}_p = \zetav_L(s_c) \cos \theta_p + \xiv_L(s_c) \sin \theta_p \cos \phi_p + \etav_L(s_c) \sin \theta \sin \phi_p $と表すと，式(\req{eq:CylinderEq})から次式を得ます．
+		\begin{equation}\label{eq:CylinderEq2}
+			(u'|\zetav_{U,i} \times \zetav_L|)^2 -2 (u'|\zetav_{U,i} \times \zetav_L|) \sigma_p \varepsilon_p \sin \theta \cos \phi + (\sigma_p \varepsilon_p \sin \theta)^2 =0
+		\end{equation}
+		この式が解を持つためには，$ \phi_p=0 $が必要であり，その時の$ \varepsilon_p $は次式で表されます．
+		\begin{equation}\label{eq:vareps_p_eq}
+			\varepsilon_{c,p} = \frac{D \cos \alpha}{\sin \theta \exp \left[ \int_{s_p}^{s_c} \sigma_i ds \right]}
+		\end{equation}
+		レトラクションにおいては，なるべく曲線を変形させたくないので，$ \varepsilon_{c,p} \rightarrow \min $を満たすと仮定することで，$ \theta_p = \frac{\pi}{2} $を得ます．これに従って，曲線を変形させます．この操作をレトラクションを定義しています．
 		
-		次に，$ s=s_c $で極値をとる仮定で話を進めます．この時，$ \phi_{i+1},\theta_{i+1},\varepsilon_{c,i+1} $に従って曲線を変形させる時，局所修正の1番目の条件より，三つの変数は以下を満たします．
-		\begin{equation}\label{eq:FirstAmendEq}
-			 \int |\sum_{j=1}^{i+1} \varepsilon_j \bd{d}_j|^2 ds
-		\end{equation}
-		これを$ \bd{\delta}_i =  \sum_{j=1}^{i} \varepsilon_j \bd{d}_j$とおき展開すると次式が成り立つ．
+		次に，$ s=s_c $で極値をとる仮定で話を進めます．$ \phi_{i+1},\theta_{i+1},\varepsilon_{c,i+1} $に従って曲線を変形させる時，局所修正の1番目の条件および，2番目の条件を$ |\xv_{U,n}(s_c) + \varepsilon_{i+1} \bd{d}_{i+1} - \bd{C}| \rightarrow \min$と解釈する．二つの条件は次式のように整理すれば，$ \varepsilon_{c,i+1} $に関して見れば二次関数であると捉えることができる．
 		
-		\begin{equation}\label{eq:FirstAmendEqVer2}
-			\varepsilon_{c,i+1}^2 \int_{0}^{L} \exp \left(2 \int_{s_c}^s \sigma_i \right) ds + 2 \varepsilon_{c,i+1} \int_{0}^{L} \exp \left( \int_{s_c}^s \sigma_i \right) \bd{d}_{i+1} \cdot \bd{\delta}_i ds + \int_{0}^{L} |\bd{\delta}_i|^2 ds 
+		\begin{equation}\label{eq:No1_eq}
+			\varepsilon_{c,i+1}^2 \int_{0}^{L} \exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right] + 2\varepsilon_{c,i+1} \bd{d}_{i+1} \cdot \left[\int_{0}^{L} \sum_{j=1}^{i} \varepsilon_j \bd{d}_j　\exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right] \right] + \int_{0}^{L} |\sum_{j=1}^{i} \varepsilon_j \bd{d}_j|^2 ds
 		\end{equation}
-		これは，シンプルな二次関数と捉えることもできる．つまり，$ \varepsilon_{c,i+1} $が最小となるときは，
-		\begin{equation}\label{eq:eps_i+1eq}
-			\varepsilon_{c,i+1} = - \frac{\int_{0}^{L} \exp \left( \int_{s_c}^s \sigma_i \right) \bd{d}_{i+1} \cdot \bd{\delta}_i ds}{\int_{0}^{L} \exp \left(2 \int_{s_c}^s \sigma_i \right) ds}
+			
+		\begin{equation}\label{eq:No2_eq}
+			\varepsilon_{c,i+1}^2 -2 \varepsilon_{c,i+1} \bd{d}_{i+1} \cdot (\bd{C}-\xv_{U,n}) + |\bd{C}-\xv_{U,n}|^2
 		\end{equation}
 		
+		この二つの最小値条件は，$ \varepsilon_{c,i+1} $が一致することから次式で表現される．
+		\begin{equation}\label{eq:var_c_eq}
+			-\frac{\bd{d}_{i+1} \cdot \int_{0}^{L} \sum_{j=1}^{i} \varepsilon_j \bd{d}_j 　\exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right]}{\int_{0}^{L} \exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right]} = \bd{d}_{i+1} \cdot (\bd{C}-\xv_{U,n})
+		\end{equation}
+		
+		のちの計算で使用するため，次式のように制約式として表現する．
+		\begin{equation}\label{eq:var_c_eq2}
+			\bd{d}_{i+1} \cdot \left( \frac{\int_{0}^{L}　\sum_{j=1}^{i} \varepsilon_j \bd{d}_j \exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right]}{\int_{0}^{L} \exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right]} + (\bd{C}-\xv_{U,n}) \right) := \bd{d}_{i+1} \cdot \bd{\mu} = 0
+		\end{equation}
+		さらに，$ \bd{d}_{i+1} $は$ \bd{C}-\xv_{U,n} $の方向になるべく平行となる方が解にたどり着ける可能性が高いため，$  \bd{d}_{i+1} \cdot \bd{C}-\xv_{U,n} \rightarrow \max$が要求される．式(\ref{eq:var_c_eq2})より，$ \bd{\mu} $を表すオイラー角を$ \phi_q, \theta_q $とおけば，$ \bd{d}_{i+1} $は$ \theta_q, \phi_q$および任意の角度$ \psi $を用いて表すことができ，これを用いて$ \bd{d}_{i+1} \cdot (\bd{C}-\xv_{U,n}) $の極値条件を求めれば，解を得ることができると思われる．
+		
+	\section{【メモ用】オイラー角表記}
+	\begin{equation}
+		\left[ \begin{array}{ccc}
+			\cos \theta \cos \psi & -\cos \theta \sin \psi & \sin \theta \\
+			\cos \phi \sin \psi + \sin \phi \sin \theta \cos \psi & \cos \phi \cos \psi - \sin \phi \sin \theta \sin \psi & -\sin \phi \cos \theta \\
+			\sin \phi \sin \psi - \cos \phi \sin \theta \cos \psi & \sin \phi \cos \psi + \cos \phi \sin \theta \sin \psi & \cos \phi \cos \theta
+		\end{array}\right]
+	\end{equation}	
 		
 		
 	\section{次回のMTGについて（終了後記載）}
