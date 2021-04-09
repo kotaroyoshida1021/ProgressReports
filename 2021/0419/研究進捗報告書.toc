@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}局所修正法について}{1}%
+\contentsline {subsection}{\numberline {1.1}アルゴリズムの考え方と諸定理について}{1}%
+\contentsline {subsection}{\numberline {1.2}アルゴリズムについて}{2}%
+\contentsline {section}{\numberline {2}結果}{2}%
+\contentsline {section}{\numberline {3}次回のMTGについて（終了後記載）}{3}%

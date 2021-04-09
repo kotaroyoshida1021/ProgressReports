@@ -1,4 +1,4 @@
-\documentclass[16pt]{jsarticle}
+\documentclass[16.7pt]{jsarticle}
 
 \usepackage{SPR}
 
@@ -109,7 +109,45 @@
 			\bd{d}_{i+1} \cdot \left( \frac{\int_{0}^{L}　\sum_{j=1}^{i} \varepsilon_j \bd{d}_j \exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right]}{\int_{0}^{L} \exp \left[ \int_{s_c}^{s} 2\sigma_{i+1} (s) \right]} + (\bd{C}-\xv_{U,n}) \right) := \bd{d}_{i+1} \cdot \bd{\mu} = 0
 		\end{equation}
 		さらに，$ \bd{d}_{i+1} $は$ \bd{C}-\xv_{U,n} $の方向になるべく平行となる方が解にたどり着ける可能性が高いため，$  \bd{d}_{i+1} \cdot \bd{C}-\xv_{U,n} \rightarrow \max$が要求される．式(\ref{eq:var_c_eq2})より，$ \bd{\mu} $を表すオイラー角を$ \phi_q, \theta_q $とおけば，$ \bd{d}_{i+1} $は$ \theta_q, \phi_q$および任意の角度$ \psi $を用いて表すことができ，これを用いて$ \bd{d}_{i+1} \cdot (\bd{C}-\xv_{U,n}) $の極値条件を求めれば，解を得ることができると思われる．
+	\subsection{RenewRetraction}
+		母線の分布に沿って曲線を操作するときには，どのような$ \varepsilon $の分布を選んでも，可展面の式を満たすことができることを証明する．接平面式を求めると，
+		\begin{equation}\label{eq:TanEq_withGene}
+			\left\{ (u'\zetav_U + \varepsilon' \bd{d}_2 + \varepsilon \bd{d}_2') \times \zetav_L \right\}\cdot(D+\varepsilon)\bd{d}_2 = 0
+		\end{equation}
+		となる．計算過程では，$ \xv_U - \xv_L = D \bd{d}_2 $であることを用いている．スカラー3重積の変換操作をいくつか行うことで，
+		\begin{equation}\label{eq:TanEq_ver2}
+			(\zetav_L \times \bd{d}_2 )\cdot (u'\zetav_U + \varepsilon' \bd{d}_2 + \varepsilon \bd{d}_2') = 0
+		\end{equation}
+		と変換することができる．ここで操作前は可展面であることから，$ \zetav_U $は接平面上に存在しており，$ \bd{d}_2' = -(\alpha' + \omega_{\eta}) \bd{d}_1 $と計算できることから，この式は恒等式となる．以上より，題意は示された．
 		
+		このことから，母線方向であれば任意の$ \varepsilon $分布を設定し変形操作を行うことができる．ただし，可展面の情報は変化しないことから，自己交差を起こすかどうかは常に注意しなければならない．
+		$ \varepsilon = \bd{a} \cdot \bd{e}$のように，基底関数の線形和で表記する．局所変形性を考慮することから，$ \varepsilon $は
+		\begin{equation}\label{eq:min_vareps}
+			\min \int_{0}^{L} \varepsilon^2 ds
+		\end{equation}
+		を満たす．また，制約条件として次式らを与える．
+		\begin{eqnarray}
+			\varepsilon' \cos \alpha -(\alpha'+\omega_{\eta})\sin \alpha - u' (\zetav_U \times \zetav_L) \cdot \etav_L &=& 0 \\
+			\varepsilon - \bd{d}_2 \cdot (\bd{C} - \bd{x}_U) &=& 0
+		\end{eqnarray}
+		これらはそれぞれ，のちに用いるための極値条件を与える式および，最大限の移動量を確保するための式である．この最適化問題を解けば最適な分布を得ることができると想定される．
+		
+		この最適化問題をラグランジュ乗数を用いて次のように表す．
+		\begin{eqnarray}\label{eq:LagrangeEq}
+			L(\bd{a}) &=&  \int_{0}^{L} \varepsilon^2 ds - \lambda_1(\varepsilon' \cos \alpha -(\alpha'+\omega_{\eta})\sin \alpha - u' (\zetav_U \times \zetav_L) \cdot \etav_L) - \lambda_2 (\varepsilon - \bd{d}_2 \cdot (\bd{C} - \bd{x}_U)) \\
+			&:= & \bd{a}^T \bd{M} \bd{a} - \lambda_1(\bd{a} \bd{C}_1 - p_1) -\lambda_2(\bd{a} \bd{C}_2 - p_2) 
+		\end{eqnarray}
+		KKT条件から$ \bd{a} $は
+		\begin{equation}\label{eq:Calc_Coef}
+			\bd{a} = \lambda_1 \bd{C}_1^T \bd{M}^{-1} + \lambda_2 \bd{C}_2^T \bd{M}^{-1} 
+		\end{equation}
+		と表すことができる．また，KKT条件の式から，
+		\begin{eqnarray}
+			\lambda_1 \bd{C}_1^T \bd{M}^{-1} \bd{C}_1 + \lambda_2 \bd{C}_2^T \bd{M}^{-1} \bd{C}_1  &=& p_1 \\
+			\lambda_1 \bd{C}_1^T \bd{M}^{-1} \bd{C}_2 + \lambda_2 \bd{C}_2^T \bd{M}^{-1} \bd{C}_2 &=& p_2
+		\end{eqnarray}
+		を得る．この2つを連立して解くことで，$ \bd{a} $を得る．
+		これを操作の代わりに置く．
 	\section{【メモ用】オイラー角表記}
 	\begin{equation}
 		\left[ \begin{array}{ccc}
