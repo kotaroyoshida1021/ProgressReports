@@ -45,7 +45,7 @@ set key font "Arial,20"
 
 #set size ratio -1
 
-plot "SURFACE.txt" using 1:2 with lines linewidth 1.0 title "surface"
+plot "SURFACE.txt" using 1:2 with lines linewidth 1.0 title "surface", "COND.txt" u 1:2 title "COND POS"
 set terminal pngcairo enhanced crop
 set output "ObtainedSurfacefromz-y.png"
 
@@ -60,7 +60,7 @@ set key font "Arial,20"
 
 #set size ratio -1
 
-plot "SURFACE.txt" using 1:3 with lines linewidth 1.0 title "surface"
+plot "SURFACE.txt" using 1:3 with lines linewidth 1.0 title "surface", "COND.txt" u 1:3 title "COND POS"
 set terminal pngcairo enhanced crop
 set output "ObtainedSurfacefromz-x.png"
 
