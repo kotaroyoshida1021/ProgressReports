@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  9 APR 2021 20:24
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  17 APR 2021 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,40 +385,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--44
  []
 
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 49.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 49.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 49.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 49.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 53.
+(Font)              scaled to size 6.72699pt on input line 46.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 53.
+(Font)              scaled to size 4.805pt on input line 46.
+File: ./figure/Shifting.png Graphic file (type bmp)
+<./figure/Shifting.png>
+File: ./figure/Stretching.png Graphic file (type bmp)
+<./figure/Stretching.png>
 [1
 
-]
+] [2]
 File: figure/0409/ObtainedRidgeLinefromz-x.png Graphic file (type bmp)
 <figure/0409/ObtainedRidgeLinefromz-x.png>
 File: figure/0409/ObtainedRidgeLinefromz-y.png Graphic file (type bmp)
 <figure/0409/ObtainedRidgeLinefromz-y.png>
 
-Overfull \hbox (25.16039pt too wide) in paragraph at lines 127--137
+Overfull \hbox (25.16039pt too wide) in paragraph at lines 146--156
 []\JY1/mc/m/n/10 　 []$[]$[] 　 []$[]$[]
  []
 
-[2]
 File: figure/0409/Patt2.png Graphic file (type bmp)
 <figure/0409/Patt2.png>
- [3] (./研究進捗報告書.aux) ) 
+[3] [4] (./研究進捗報告書.aux) ) 
 Here is how much of TeX's memory you used:
- 4541 strings out of 492759
- 61026 string characters out of 6143227
- 145512 words of memory out of 5000000
- 8930 multiletter control sequences out of 15000+600000
+ 4556 strings out of 492759
+ 61331 string characters out of 6143227
+ 144512 words of memory out of 5000000
+ 8941 multiletter control sequences out of 15000+600000
  17592 words of font info for 79 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 53i,11n,50p,350b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,50p,468b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 研究進捗報告書.dvi (3 pages, 14300 bytes).
+Output written on 研究進捗報告書.dvi (4 pages, 17592 bytes).
