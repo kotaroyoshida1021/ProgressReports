@@ -1,0 +1,157 @@
+\section{曲面論の基本定理など}
+	\subsection{曲面論の基本定理の成立条件について}
+		曲線論の基本定理は，曲率$ \kappa $および捩率$ \tau $が与えられる場合，曲線は回転・平行移動を除いて一意に決定されるという定理であった．この基本定理は，フレネ・セレの公式からも明らかである．
+		
+		一方，曲面論における基本定理は，曲面の第一基本形式および第二基本形式が与えられる場合，その曲面が一意に決定できるというものである．この基本定理の成立条件は
+		
+		\begin{eqnarray}\label{eq:SurfaceConds}
+			K &=& \det \{ b_{ij} \} \\
+			b_{i2,1} &=& b_{i1,2}
+		\end{eqnarray}
+		が成立することである．ただし，$ \{ a_{ij}\} $は，$ a_{ij} $を成分に持つ行列全体を表す．この$ b $に関しては，曲面に関する係数だが，これについては外微分形式を導入したのち，説明する．
+		
+		我々が定式化した曲面モデルが，上記の２式を満たすことを証明する．
+	\subsection{数式のおことわり}
+		本式において，$ R^n $は$ n $次元ユークリッド空間を表し，その座標を$ \bd{x} = \{ x_i\}_{i=0,\cdots , n-1} $と表す．$ \{ a_{ij}\} $は，$ a_{ij} $を成分に持つ行列全体を表す．また，行列式は$ \det A $のように表す．また，当研究室において用いられていた主曲率方向$ \bd{d}_1,\bd{d}_2 $や物体標構の各軸回転率，母線角はそれぞれ同様のものを用いるとする．
+	
+	\subsection{多様体および外微分形式の導入の概説}
+		$ n $次元空間における$ n $次元多様体とは，空間$ M $と局所座標近傍の系$ \{U_i\}_{i=0,\cdots ,N} $からなり，特に$ n $次元微分可能多様体は，次の定義を満たす．
+		\begin{itemize}
+			\item $ M $は位相空間（点の近傍が定義可能な空間）である．
+			\item $ M $は開集合の族$ \{ U_j \} $と，各$ U_j $から$ R^n $への写像$ \phi_j(U_j) $を持つ．
+			\item $ \{ U_j \} $は$ M $を覆う．すなわち，$ \cup_j  U_j  = M$
+			\item $ \{ \phi_j | U_j \rightarrow R^n\} $は，開集合で，$ \phi_j $は，$ U_j $から$ \phi_j (U_j) $上の同相写像である．
+			\item $ U_j \cap U_i \neq 0$となる$ i,j $の組に対して，$ \phi_i(U_i \cap U_j) $から，$ \phi_j(U_i \cap U_j) $への写像$ \phi_j \circ  \phi_i^{-1} $は，無限回微分可能である．
+		\end{itemize}
+		上記の内，(2)~(5)を満たす族$ \{ U_j,\; \phi_j\} $を座標近傍系といい，個々の要素を座標近傍という．
+		
+		多様体上の微分を考えるにあたって，微分積分における外積$ \wedge $を次のような性質を満たす演算と定義する．
+		\begin{itemize}
+			\item 分配則$ (\bd{x}_1 + \bd{x}_2) \wedge \bd{y} = \bd{x}_1 \wedge \bd{y} + \bd{x}_2 \wedge \bd{y} $
+			\item 結合則$ \bd{x} \wedge (\bd{y} \wedge \bd{z}) = (\bd{x} \wedge \bd{y} )\wedge \bd{z}$
+		\end{itemize}
+		また，空間基底$ \{ \bd{\sigma}_i \} $に対し，$ \bd{a} = \sum a_i \bd{\sigma}_i,\bd{b} = \sum b_j \bd{\sigma}_j$と表されるベクトル集合を，1-ベクトルと呼び，外積によって定義される次のような空間
+		\begin{equation}\label{eq:Gaiseki}
+			\bd{a} \wedge \bd{b} = \sum_i \sum_j a_i b_j (\bd{\sigma}_i \wedge \bd{\sigma}_j)
+		\end{equation}
+		によって得られるベクトルを2-ベクトルと呼ぶ．これを一般化すると$p$-ベクトルは，次式のように表される．
+		\begin{equation}\label{eq:Gaiseki2}
+			\sum_{i_1,\cdots i_p} a_{i_1,\cdots,i_p} (\bd{\sigma}_1 \wedge \cdots \wedge \bd{\sigma}_n)
+		\end{equation}
+		$ p $-ベクトル$ \mu $および$ q $-ベクトル$ \nu $に対し，外積は次のような性質を持つ．
+		\begin{equation}\label{eq:Gaiseki3}
+			\mu \wedge \nu = (-1)^{pq} \nu \wedge \mu
+		\end{equation}
+		$ R^n $上の$ n $次元微分可能多様体$ M $において，多様体上のある点$ P $における1次外微分形式を1-形式と呼び，$ \sum a_i(P)dx_i $と定義する．次式を，点$ P $における$ p $次微分形式と呼び，$ p $-形式と表す．
+		\begin{equation}\label{eq:BIBUN1}
+			\sum_{h_1} \cdots \sum_{h_p} a_{h_1,\cdots,h_p} dx_{h_1} \wedge \cdots \wedge dx_{h_p}
+		\end{equation}
+		外微分作用素$ \Delta $は，$p$-形式を$ (p+1) $-形式にする線形写像であり，次の性質を持つと定義する．
+		\begin{itemize}
+			\item $ \Delta(\omega + \eta) = \Delta \omega + \Delta \eta $ 
+			\item $ \lambda $が$ p $-形式の場合において，$ \Delta(\lambda \wedge \mu ) = \Delta \lambda \wedge \mu + (-1)^p \lambda \wedge \Delta \mu $
+			\item $ \Delta (\Delta \omega) = 0 $
+			\item 関数$ f $に対して$ \Delta f = \sum \frac{\partial f}{\partial x_i }\Delta x_i $
+		\end{itemize}
+	\subsection{曲面における外微分形式}
+		曲面の全体は$ n=2 $の場合における多様体として考えることができる．曲面$ M $において，各点で接平面内のベクトル$ \bd{e}_1,\bd{e}_2 $を
+		\begin{equation}\label{eq:e1e2}
+			\bd{e}_1 \cdot \bd{e}_1 = \bd{e}_2 \cdot \bd{e}_2 = 1, \;\; \bd{e}_1 \cdot \bd{e}_2  = 0
+		\end{equation}
+		となるように選び，$ \bd{e}_3 = \bd{e}_1 \times \bd{e}_2 $となるように定める．この$ \bd{e}_3 $は曲面に対する法線ベクトルと符号を除いて一致する．以降では，曲面に対する法線ベクトルと一致すると仮定する．
+		点$ \bd{r} $が曲面上に沿って移動するとき，その変化量は
+		\begin{equation}\label{eq:dreq}
+			\Delta \bd{r} = \sigma_1 \bd{e}_1 + \sigma_2 \bd{e}_2
+		\end{equation}
+		と表すことができる．この$ \sigma_i \;(i=1,2) $は1-形式であり，2-形式$ \sigma_1 \wedge \sigma_2 $は面積要素を表す．
+		
+		また，$ \bd{e}_j $は正規直交基底の性質を満たすため，
+		\begin{equation}\label{eq:de_jeq}
+			\Delta \bd{e}_i = \sum_j \omega_{i,j} \bd{e}_j
+		\end{equation}
+		と書ける．1-形式$ \omega_{i,j} $は，次式の性質を満たす．
+		\begin{equation}\label{eq:omega_ijeq}
+			\omega_{i,j} = - \omega_{j,i},\;\; \omega_{i,i} = 0
+		\end{equation}
+		$ \Delta (\Delta \bd{r}) = \bd{0} $より
+		\begin{equation}
+			\Delta \bd{e}_i = \sum_j \sigma_j \wedge \omega_{j,i}\;\;(i=1,2) 
+		\end{equation}
+		\begin{equation}\label{eq:FirstFundamentalEq}
+			\bd{e}_1 \cdot \bd{e}_1
+		\end{equation}
+		を得る．式(\ref{eq:FirstFundamentalEq})を第一構造式と呼ぶ．また，$ \Delta \Delta \bd{e}_i =\bd{0}$から，
+		
+		\begin{equation}\label{eq:d_omgEq}
+			\Delta \omega_{i,k} = \sum_{j=1}^{3} \omega_{i,j} \wedge \omega_{j,k}
+		\end{equation}
+		を得る．
+		また，式(\ref{eq:FirstFundamentalEq})より，$ \omega_{i,3} $は，$ b_{i,j} $を係数とし，$ \sigma_1,\sigma_2 $の線形結合によって次式で表現することができる．
+		\begin{eqnarray}
+			\omega_{i,3} = \sum_{j=1}^2 b_{i,j} \sigma_j
+		\end{eqnarray}
+		この$ b_{i,j} $を用いて，ガウス曲率は$ K=\det \{b_{i,j}\} $と表すことができる．また，$ \Delta \omega_{2,1} = K \sigma_1 \wedge \sigma_2  $が成立し，これを第二構造式という．
+		$ \Delta \omega_{i,3} - \sum_{j=1}^{3} \omega_{i,j} \wedge \omega_{j,3} = 0 $より，
+		\begin{equation}\label{eq:DeltaBeq}
+			\sum_{k=1}^{2} (\Delta b_{i,k} - \sum_{j=1}^2 b_{i,j} \omega_{k,j} - \sum_{j=1}^2 b_{j,k} \omega_{i,j}) \wedge \sigma_k = 0
+		\end{equation}
+	\subsection{可展面における積分可能条件について}
+		本章では，可展面において二つの条件が成立することを示す．線織面の一般座標$ \bd{X}(s,t) $は，次式で表される．
+		\begin{equation}\label{eq:GeneralPos_RuledSurface}
+			\bd{X}(s,t) = \bd{x}_L + t \bd{d}_2
+		\end{equation}
+		ここで$ \bd{x}_L $は，曲面上の基準となる曲線を表す．この一般座標に外微分作用素を作用させると以下のように表される．
+		\begin{equation}\label{eq:TotalDiff_Pos0}
+			\Delta \bd{X} = \frac{\partial \bd{X}}{\partial s} ds + \frac{\partial \bd{X}}{\partial t} dt
+		\end{equation}
+		ここで，$ \frac{\partial \bd{X}}{\partial s},\frac{\partial \bd{X}}{\partial t} $は次式のように計算される．
+		
+		\begin{eqnarray}
+			 \frac{\partial \bd{X}}{\partial s} &=& \bd{\zeta} -t(\alpha' + \omega_{\eta}) \bd{d}_1 \\
+			 \frac{\partial \bd{X}}{\partial t} &=& \bd{d}_2
+		\end{eqnarray}
+		また，$ \bd{\zeta} ,\bd{\xi},\bd{d}_1,\bd{d}_2$には，次式が成り立つ．
+		\begin{equation}\label{eq:RelationD1D2}	
+			\left[
+			\begin{array}{cc}
+			\bd{d}_1 & \bd{d}_2
+			\end{array}
+			\right] = \bd{R}(\alpha) 	\left[
+			\begin{array}{cc}
+			\bd{\zeta} & \bd{\xi}
+			\end{array}
+			\right]
+		\end{equation}
+		ただし，$ \bd{R}(\alpha) $は，対象とする2つの基底のなす平面内で角度$ \alpha $の回転を与える行列である．
+		これを用いて式を整理すると，
+		\begin{eqnarray}\label{eq:DiffEq}
+			\Delta \bd{X} &=& \{ (\cos \alpha - t(\alpha' + \omega_{\eta}) ) \bd{d}_1 + -\sin \alpha \bd{d}_2 \}ds + \bd{d}_2 dt \\
+			&=& \{  (\cos \alpha - t(\alpha' + \omega_{\eta}) )ds \} \bd{d}_1 + (-\sin \alpha ds + dt) \bd{d}_2 
+		\end{eqnarray}
+		$ \bd{d}_1,\bd{d}_2$は，曲面の接平面の基底ベクトルであることから，\req{eq:dreq}と比較することにより，曲面における1-形式$ \sigma_i $は
+		\begin{equation}\label{eq:Dev_sigmaEq_s}
+			\sigma_1 = (\cos \alpha - t(\alpha' + \omega_{\eta}) )ds
+		\end{equation}
+		
+		\begin{equation}\label{eq::Dev_sigmaEq_t}
+			\sigma_2 = -\sin \alpha ds + dt
+		\end{equation}
+		
+		と表される．また，$ \Delta \bd{d}_1, \Delta \bd{d}_2, \Delta \bd{\eta},$を計算することにより，$ \bd{\Omega} = \{\omega_{i,j}\} $は次式で表される．
+		\begin{equation}\label{eq:Dev_OmegaEq}
+			\bd{\Omega} = \left[ \begin{array}{ccc}
+				0 & (\alpha' + \omega_{\eta})ds & -\frac{\omega_{\xi} }{\cos \alpha} ds \\
+				-(\alpha' + \omega_{\eta})ds & 0 & 0\\
+				\frac{\omega_{\xi} }{\cos \alpha} ds & 0 & 0 
+			\end{array}\right]
+		\end{equation}
+		\req{eq:Dev_sigmaEq_s},\req{eq:Dev_sigmaEq_t}および\req{eq:Dev_OmegaEq}の結果から，$ \bd{B} = \{ b_{ij} \} $は次式で求められる．
+		\begin{equation}\label{eq:beq}
+			\bd{B} = \left[
+				\begin{array}{cc}
+					-\frac{\omega_{\xi} }{\cos \alpha  (\cos \alpha - t(\alpha' + \omega_{\eta}) ) } & 0 \\
+					0 & 0
+				\end{array}
+			\right]
+		\end{equation}
+		したがって，ここから，$ b_{i2,1} = b_{i1.2} =0 $を導くことができ，$ K = \det \bd{B} = 0 $を導くことができる．したがって，可展面においては曲面の基本定理が成立することが示された．

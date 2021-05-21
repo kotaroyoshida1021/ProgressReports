@@ -73,13 +73,13 @@
 			\centering
 			\begin{minipage}{0.4\hsize}
 				\centering
-				\includegraphics[width= 0.6\columnwidth]{./figure/Shifting.png}
-				\caption{Shifting}
+				\includegraphics[width= 0.6\columnwidth]{./figure/Stretching.png}
+				\caption{Stretching}
 			\end{minipage}
 			\begin{minipage}{0.4\hsize}
 				\centering
-				\includegraphics[width= 0.6\columnwidth]{./figure/Stretching.png}
-				\caption{Stretching}
+				\includegraphics[width= 0.6\columnwidth]{./figure/Shifting.png}
+				\caption{Shifting}
 			\end{minipage}
 		\end{figure}
 		母線方向の曲線操作を行うStretchingについて説明する．この際，$ \varepsilon $に関する要求は以下にまとめられる．
@@ -141,7 +141,7 @@
 		この動作を，誤差が$ \delta $以下になるまで反復させることで，曲面の局所変形を達成できると考えられる．
 　   	
 　   \section{結果}
-　   この数値実験では，２つの円弧の間に形成された曲面を$ s=0.2 $の時の点を，$\bd{C} = [ 0.241197 0.308751 0.480096 ]$に変更したい場合を想定した結果となる．
+　   この数値実験では，２つの円弧の間に形成された曲面を$ s=0.2 $の時の点を，$\bd{C} = [ 0.241197 0.308751 0.480096 ]$および，$\bd{C} = [ 0.441197 0.308751 0.480096 ]$に変更したい場合を想定した結果となる．
 　   	\begin{figure}[H]
 　   		\begin{minipage}{0.5\hsize}
 　   			\centering
@@ -157,8 +157,26 @@
 　  	\begin{figure}[H]
 　   		\centering
 　   		\includegraphics[width = 0.4\columnwidth]{figure/0409/Patt2.png}
-　   		\caption{z-y plane }
+　   		\caption{pattern shape}
 　   \end{figure}
+
+	\begin{figure}[H]
+		\begin{minipage}{0.5\hsize}
+			\centering
+			\includegraphics[width = 1.0\columnwidth]{figure/0415/ObtainedRidgeLinefromz-x.png}
+			\caption{z-x plane }
+		\end{minipage}
+		\begin{minipage}{0.5\hsize}
+			\centering
+			\includegraphics[width = 1.0\columnwidth]{figure/0415/ObtainedRidgeLinefromz-y.png}
+			\caption{z-y plane }
+		\end{minipage}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.4\columnwidth]{figure/0415/Patt2.png}
+		\caption{pattern shape }
+	\end{figure}
 	この結果より，非常に曲線および曲面を局所的に変更することができたことが読み取れる．
 		
 	\section{次回のMTGについて（終了後記載）}
