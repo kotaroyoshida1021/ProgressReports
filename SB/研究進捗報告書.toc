@@ -1,4 +1,8 @@
-\contentsline {section}{\numberline {1}【予備】局所修正法について}{1}%
-\contentsline {subsection}{\numberline {1.1}RenewRetraction}{3}%
-\contentsline {section}{\numberline {2}【メモ用】オイラー角表記}{4}%
+\contentsline {section}{\numberline {1}曲線の表現}{1}%
+\contentsline {subsection}{\numberline {1.1}位置情報を基にした表現方法}{1}%
+\contentsline {section}{\numberline {2}自由曲面の表現}{2}%
+\contentsline {subsection}{\numberline {2.1}クーンズ曲面}{2}%
+\contentsline {subsection}{\numberline {2.2}ベジエパッチ}{2}%
+\contentsline {subsection}{\numberline {2.3}B-spline曲面}{3}%
+\contentsline {subsection}{\numberline {2.4}曲線の内在的性質}{3}%
 \contentsline {section}{\numberline {3}次回のMTGについて（終了後記載）}{4}%

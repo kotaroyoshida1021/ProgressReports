@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  11 JUN 2021 18:36
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  24 JUN 2021 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,6 +257,10 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks24
 \@floatcapt=\box49
 ) (./mymacros.sty))
+(c:/texlive/2019/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
 
 LaTeX Warning: Unused global option(s):
     [16.7pt].
@@ -371,41 +375,76 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 9.60999pt on input line 26.
 (./研究進捗報告書.toc)
-\tf@toc=\write3
-\openout3 = `研究進捗報告書.toc'.
+\tf@toc=\write4
+\openout4 = `研究進捗報告書.toc'.
 
- (./FreeSurface.tex
-Overfull \hbox (12.0pt too wide) in paragraph at lines 36--1
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 36--44
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--1
+Underfull \hbox (badness 10000) in paragraph at lines 36--44
 
  []
 
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 3.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 3.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 3.
+(Font)              scaled to size 11.53198pt on input line 45.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 3.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 7.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 7.
+(Font)              scaled to size 11.53198pt on input line 45.
+File: ./figure/ERR_WITH_VARS2.png Graphic file (type bmp)
+<./figure/ERR_WITH_VARS2.png>
 [1
 
-] [2] [3]) [4] (./研究進捗報告書.aux) ) 
+]
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 68.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 4.805pt on input line 68.
+File: ./figure/Injection.png Graphic file (type bmp)
+<./figure/Injection.png>
+File: ./figure/Surjection.png Graphic file (type bmp)
+<./figure/Surjection.png>
+File: ./figure/Neighborhood.png Graphic file (type bmp)
+<./figure/Neighborhood.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./figure/delta_OmgEta.png Graphic file (type bmp)
+<./figure/delta_OmgEta.png>
+File: ./figure/delta_Alpha.png Graphic file (type bmp)
+<./figure/delta_Alpha.png>
+File: ./figure/delta_Dist.png Graphic file (type bmp)
+<./figure/delta_Dist.png>
+File: ./figure/ERR_DELTA.png Graphic file (type bmp)
+<./figure/ERR_DELTA.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./figure/vars_OmgEta.png Graphic file (type bmp)
+<./figure/vars_OmgEta.png>
+File: ./figure/vars_Alpha.png Graphic file (type bmp)
+<./figure/vars_Alpha.png>
+File: ./figure/vars_Dist.png Graphic file (type bmp)
+<./figure/vars_Dist.png>
+File: ./figure/ERR_VARS.png Graphic file (type bmp)
+<./figure/ERR_VARS.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] Excluding 'comment' comment. [3] [4] (./研究進捗報告書.aux) ) 
 Here is how much of TeX's memory you used:
- 4531 strings out of 492759
- 60689 string characters out of 6143227
- 146512 words of memory out of 5000000
- 8924 multiletter control sequences out of 15000+600000
+ 4609 strings out of 492759
+ 62316 string characters out of 6143227
+ 146438 words of memory out of 5000000
+ 8985 multiletter control sequences out of 15000+600000
  17592 words of font info for 79 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 53i,14n,50p,631b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,50p,362b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 研究進捗報告書.dvi (4 pages, 25528 bytes).
+Output written on 研究進捗報告書.dvi (4 pages, 14656 bytes).
