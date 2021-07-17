@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  24 JUN 2021 20:08
+This is e-pTeX, Version 3.14159265-p3.8.2-190131-2.6 (utf8.sjis) (TeX Live 2019/W32TeX) (preloaded format=platex 2019.12.23)  28 JUN 2021 13:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -388,33 +388,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--44
 
  []
 
+File: ./figure/05Plus/ObtainedRidgeLinefromz-x.png Graphic file (type bmp)
+<./figure/05Plus/ObtainedRidgeLinefromz-x.png>
+File: ./figure/05Plus/ObtainedRidgeLinefromz-y.png Graphic file (type bmp)
+<./figure/05Plus/ObtainedRidgeLinefromz-y.png>
+File: ./figure/05Minus/ObtainedRidgeLinefromz-x.png Graphic file (type bmp)
+<./figure/05Minus/ObtainedRidgeLinefromz-x.png>
+File: ./figure/05Minus/ObtainedRidgeLinefromz-y.png Graphic file (type bmp)
+<./figure/05Minus/ObtainedRidgeLinefromz-y.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./figure/02Plus/ObtainedRidgeLinefromz-x.png Graphic file (type bmp)
+<./figure/02Plus/ObtainedRidgeLinefromz-x.png>
+File: ./figure/02Plus/ObtainedRidgeLinefromz-y.png Graphic file (type bmp)
+<./figure/02Plus/ObtainedRidgeLinefromz-y.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
+(Font)              scaled to size 11.53198pt on input line 84.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
+(Font)              scaled to size 11.53198pt on input line 84.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
+(Font)              scaled to size 11.53198pt on input line 84.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 45.
-File: ./figure/ERR_WITH_VARS2.png Graphic file (type bmp)
-<./figure/ERR_WITH_VARS2.png>
+(Font)              scaled to size 11.53198pt on input line 84.
 [1
 
 ]
+File: ./figure/ERR_WITH_VARS2.png Graphic file (type bmp)
+<./figure/ERR_WITH_VARS2.png>
+ [2]
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 68.
+(Font)              scaled to size 6.72699pt on input line 107.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 4.805pt on input line 68.
+(Font)              scaled to size 4.805pt on input line 107.
 File: ./figure/Injection.png Graphic file (type bmp)
 <./figure/Injection.png>
 File: ./figure/Surjection.png Graphic file (type bmp)
 <./figure/Surjection.png>
-File: ./figure/Neighborhood.png Graphic file (type bmp)
-<./figure/Neighborhood.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+File: ./figure/DataSciences.png Graphic file (type bmp)
+<./figure/DataSciences.png>
+ [3]
+File: ./figure/Neighborhood2.png Graphic file (type bmp)
+<./figure/Neighborhood2.png>
 File: ./figure/delta_OmgEta.png Graphic file (type bmp)
 <./figure/delta_OmgEta.png>
 File: ./figure/delta_Alpha.png Graphic file (type bmp)
@@ -423,6 +441,7 @@ File: ./figure/delta_Dist.png Graphic file (type bmp)
 <./figure/delta_Dist.png>
 File: ./figure/ERR_DELTA.png Graphic file (type bmp)
 <./figure/ERR_DELTA.png>
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -437,14 +456,14 @@ File: ./figure/ERR_VARS.png Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2] Excluding 'comment' comment. [3] [4] (./研究進捗報告書.aux) ) 
+Excluding 'comment' comment. [4] [5] (./研究進捗報告書.aux) ) 
 Here is how much of TeX's memory you used:
- 4609 strings out of 492759
- 62316 string characters out of 6143227
- 146438 words of memory out of 5000000
- 8985 multiletter control sequences out of 15000+600000
+ 4639 strings out of 492759
+ 63551 string characters out of 6143227
+ 143438 words of memory out of 5000000
+ 9006 multiletter control sequences out of 15000+600000
  17592 words of font info for 79 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 53i,11n,50p,362b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,50p,320b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 研究進捗報告書.dvi (4 pages, 14656 bytes).
+Output written on 研究進捗報告書.dvi (5 pages, 16312 bytes).

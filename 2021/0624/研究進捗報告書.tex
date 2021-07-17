@@ -41,11 +41,50 @@
 	\newcommand{\Ker}{{\rm Ker}}
 	\newcommand{\rank}{{\rm rank}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{投稿論文の図について}
+	現在は，2つの円弧によって生成された曲面を対象に取り扱っていましたが，これを，ワコールから頂いた下カップの3Dデータに置き換える方がよいのではと考えました．（要は簡単なデータではなく，実際にある曲面データを修正可能であると言えるため）
+	
+	この場合，展開後の二次元形状を提出する際には，何か言われるかもしれませんが．．
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.45\hsize}
+			\centering
+			\includegraphics[scale = 0.3]{./figure/05Plus/ObtainedRidgeLinefromz-x.png}
+		\end{minipage}
+		\begin{minipage}{0.45\hsize}
+			\centering
+			\includegraphics[scale = 0.3]{./figure/05Plus/ObtainedRidgeLinefromz-y.png}
+		\end{minipage}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.45\hsize}
+			\centering
+			\includegraphics[scale = 0.3]{./figure/05Minus/ObtainedRidgeLinefromz-x.png}
+		\end{minipage}
+		\begin{minipage}{0.45\hsize}
+			\centering
+			\includegraphics[scale = 0.3]{./figure/05Minus/ObtainedRidgeLinefromz-y.png}
+		\end{minipage}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.45\hsize}
+			\centering
+			\includegraphics[scale = 0.3]{./figure/02Plus/ObtainedRidgeLinefromz-x.png}
+		\end{minipage}
+		\begin{minipage}{0.45\hsize}
+			\centering
+			\includegraphics[scale = 0.3]{./figure/02Plus/ObtainedRidgeLinefromz-y.png}
+		\end{minipage}
+	\end{figure}
 \section{データ周りの話について}
 		\subsection{前回の研究会までで行ったこと}
-		前回の考察では，主にデータ間の距離に着目し，議論を進めた．しかし，ガウス過程回帰により得られたパラメータにおける話の整合性が薄かった点や，内挿および外挿的な部分が議論できていないなど，詰めるべき課題が多く残っていた．
+		前回の考察では，主にデータ間の距離に着目し，議論を進めた．しかし，内挿および外挿的な部分が議論できていないなど，詰めるべき課題が多く残っていた．
 		
-		まずはじめに考察したのは，内挿と外挿の話であった．内挿と外挿を定義するため，入力データの凸包を考え，凸包内に出力データが入っていなければ外挿というアイデアを考えたが，計算結果として，少なくとも凸包内には全ての出力データは含まれるという結果しか得られなかったため，頓挫．
+		そのため今回考えたのは，内挿と外挿の話であった．はじめは，内挿と外挿を定義するため，入力データの凸包を考え，凸包内に出力データが入っていなければ外挿というアイデアを考えたが，計算結果として，少なくとも凸包内には全ての出力データは含まれるという結果しか得られなかったため，頓挫．
 		
 		ここで，改めてテストデータに対する予測値の絶対誤差と分散をまとめたものを示す．
 		
@@ -86,7 +125,13 @@
 		\begin{itemize}
 			\item 検証データにおける誤差の大きな値をとった出力値における入力値は，訓練データにおいて似たような出力値における入力値と似ていなかったため，誤差が発生した．
 		\end{itemize}
-		例えば，$ y=\sin x $において，$ x \in [0,2\pi) $の区間で学習させた曲線を考える．この時データのばらつきによっては，$ x = 2\pi $における出力は，必ずしも期待値である$ 0 $と予測できないと考えられる．この時，訓練データの入力パラメータ群に対して，データとの距離だけで見れば小さいが，ある意味外挿的であると考えられる．そこで，この考え方を用いて考察してみる．
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width= 0.55\columnwidth]{./figure/DataSciences.png}
+			\caption{外挿}
+		\end{figure}
+		例えば，図のような形を考えると，データ間の距離だけで着目すれば，似たようなデータは存在するが，このように出力を加味すれば，このデータは外挿的であり，回帰曲線を用いて計算した値と異なる可能性は高い．
+		今回は，このことを考慮しながら，数値実験を行った．
 		\subsection{数値実験内容}
 		今回はこの仮説を基にして，以下のように実験を行った．以下では，訓練データ集合を$ \bd{D} = (\bd{X},\bd{y}) $と表現し，検証データ集合を$ \bd{D}^* = (\bd{X}^*,\bd{y}^*) $として表現する．
 		\begin{enumerate}
@@ -100,8 +145,8 @@
 	
 		\begin{figure}[h]
 			\centering
-			\includegraphics[width= 0.55\columnwidth]{./figure/Neighborhood.png}
-			\caption{Manhattan}
+			\includegraphics[width= 0.50\columnwidth]{./figure/Neighborhood2.png}
+			\caption{Neighborhood}
 		\end{figure}
 		また，$ \delta $は以下のように定義する．
 		\begin{equation}\label{eq:delta_eq}
@@ -166,7 +211,9 @@
 	
 	全体のパラメータで見ると，データの曖昧さを表現している分散の大きさと距離がほぼ完全な比例関係にあることが読み取れる．つまり，外挿的であればあるほど，得られる解の信頼度に揺らぎが生じるという結果を得た．
 	
-	上記の内容は，研究会や査読に対して突っ込まれた際にも応用できるかと思いますが，いかがでしょうか．（言葉を整理する必要はありますが・・・）
+	上記の内容は，研究会や査読に対して突っ込まれた際にも応用できるかと思いますが，いかがでしょうか．
+	
+	
 \begin{comment}
 	\subsection{前提}
 今回のパラメータは，関数$ \alpha,\omega_{\eta},D $がそれぞれ，（仮定的に）ノイズを含んだ独立ガウス過程$ N(\bd{0},\bd{K} + \sigma^2 \bd{I}) $に従って出力されているとする．$ \bd{K} $はグラム行列を表しており，各成分を定義するカーネル関数$ k(\bd{x}_i,\bd{x}_j) $を設計することにより得る．

@@ -1,24 +1,33 @@
-
-
 \section{曲線の表現}
-	本章では，既存の曲線および曲面表現の概観について述べる．曲線形状の表現方法には，位置に関する情報を基にした表現方法と曲線の局所的情報を基にした表現方法の2種類に分類できると考えられる．そのため，この2種類についてそれぞれ述べる．
-	\subsection{位置情報を基にした表現方法}
-		位置情報を基にした表現方法に関して，今回はCADシステム等で広く用いられるベジエ曲線やB-spline曲線，3次元スプライン曲線に関して説明を行う．
-		
-		■ベジエ曲線について
-		ベジエ曲線はある$ n $個の制御点集合$ \bd{C}_{\mathrm{set}} $から得られる$ n-1 $次曲線である．フランスの自動車メーカ，シトロエン社のド・カステリョとルノー社のピエール・ベジェにより独立に考案された表現方法であり，CADだけでなくInkscapeなどのベクターグラフィクスソフトなどにも採用されている手法である
-		
-		に対する曲線を生成する手法で，以下のように記述されるパラメータ$ t \in [0,1]$を持つ曲線$ \xv_{bezier} $である．
+	本章では，既存の曲線および曲面表現の概観について述べる．曲線形状の表現方法には，制御点を用いた表現方法と曲線の局所的情報を基にした表現方法の2種類に分類できると考えられる．そのため，この2種類についてそれぞれ述べる．
+	\subsection{制御点の集合により表現する手法について}
+		本章では，$ n $個の3次元ユークリッド空間$ \mathbb{R}^3 $上における制御点$\bd{C}_i $からなる制御点の集合$ \bd{C}_{\mathrm{set}} =( \bd{C}_0,\bd{C}_1,\cdots,\bd{C}_{n-1})$が与えられている場合における曲線および曲面の表現方法について述べる．中でも今回はCADシステム等で広く用いられるベジエ曲線やB-spline曲線に関して説明を行う．
+		ベジエ曲線はある$ \bd{C}_{\mathrm{set}} $に対し$ n-1 $次曲線によって表現する手法である．フランスの自動車メーカ，シトロエン社のド・カステリョとルノー社のピエール・ベジェにより独立に考案された表現方法であり，CADだけでなくInkscapeなどのベクターグラフィクスソフトなどにも採用されている手法である．曲線のパラメータには$ [0,1] $を定義域に持つパラメータ$ t \in [0,1]$を用いて表現される曲線$ \xv_{bezier} $であり，以下のように表される．
 		\begin{equation}\label{eq:bezier line}
-			\xv_{bezier} = \sum_{i=0}^{n} B_{i,n}\bd{C}_{\mathrm{set},i}
+			\xv_{bezier} = \sum_{i=0}^{n} B_{i,n}\bd{C}_{i}
 		\end{equation}
 		ただし，$ B_{i,n} $はバーンスタインの基底関数と呼ばれ，$ (t+(1-t))^n $を二項展開した際に得られる一般項によって定義される．
 		\begin{equation}\label{eq:bezier algorithm}
 			B_{i,n} = {}_n \mathrm{C}_i t^i (1-t)^{n-i}
 		\end{equation}
-		曲線の特徴として，両端の制御点$ \bd{C}_{\mathrm{set},0},\bd{C}_{\mathrm{set},n-1} $は通るが，それ以外の制御点は通らない．始端および終端の接線ベクトルは$ \bd{C}_{\mathrm{set},1}-\bd{C}_{\mathrm{set},0} $および$ \bd{C}_{\mathrm{set},n-1}-\bd{C}_{\mathrm{set},n} $の方向に一致するといった特徴がある．また，制御点の変更に対して疑似局所変形性（変更した点の周辺の曲線が大きく変形し，そのほかの部分は変形が抑えられる）がある．
+		ただし，$ {}_n \mathrm{C}_i $は二項係数を表している．曲線の特徴として，両端の制御点$ \bd{C}_{0},\bd{C}_{n-1} $は通るが，それ以外の制御点は通らない．始端および終端の接線ベクトルは$ \bd{C}_{1}-\bd{C}_{0} $および$ \bd{C}_{n-1}-\bd{C}_{n} $の方向に一致するといった特徴がある．
 		
-		■NURBS曲線について
+		ベジエ曲面は，ベジエ曲線の表現方法を拡張したもので，パッチと呼ばれる部分的な曲面の連続で曲面形状を表現する手法である．パラメータ$ u $の制御点$ \bd{C}_i $を別の制御点の集合$ [\bd{C}_{i,0},\bd{C}_{i,1},\cdots,\bd{C}_{i,m-1}] $および定義域$ [0,1] $のパラメータ$ v $の関数として表現すれば，ベジエパッチは，
+		\begin{equation}\label{eq:BezierPatch}
+			S(u,v) = \sum_{i=0}^{n} \sum_{j=0}^{m} B_{i,n}(u) B_{j,m}(v) \bd{C}_{i,j}
+		\end{equation}
+		と定義されている．
+		
+		ベジエ曲線・曲面の特性として，以下の特性を持っている．
+		\begin{itemize}
+			\item $ \bd{C}_{\mathrm{set}} $の凸包内に存在する．
+			\item アフィン変換（回転移動・平行移動・拡大・縮小・ずれ変換）に対して不変である．
+			\item 境界はベジエ曲線になる．
+			\item 疑似局所変形性（制御点を移動させると，曲線全体にわたって曲面形状は変化するが，その制御点付近の面が一番大きく変化する．
+			\item ベジエ曲線・曲面の偏導関数も，ベジエ曲線・曲面の形である．
+		\end{itemize}
+		
+		B-spline曲線について
 		ベジエ曲線では，制御点の個数に対して常に$ n-1 $次式の多項式で表される．しかし，表現性を確保するために制御点を増やすと，その分曲線を表現する多項式の次数が増加するという欠点がある．そこで，ベジエ曲線を複数接続して曲線を区分的な多項式によって表現しようとする試みによって提案されたのが，B-spline曲線である．適当な任意の区間$[t_k,t_{k+1}] $において変数変換$ \tau = (t-t_k)/(t_{k+1}-t_k), t\in[t_k,t_{k+1}] $を用いると，$ \tau \in [0,1] $であることから，$ \tau $をパラメータとする$ n $次ベジエ曲線が定義できる．
 		\begin{equation}\label{eq:Segmented_Bezier}
 			\xv_{bezier,n} = \sum_{i=0}^{n} B_{i,n}(\tau)\bd{C}_{\mathrm{set},i}
@@ -31,48 +40,26 @@
 		\end{cases} \\
 		N_{k,p}(t) &:=& \frac{t-t_k}{t_{k+p} - t_k} N_{k,p-1}(t) + \frac{t_{i+p+1}-t}{t_{i+p+1}-t_{i+1}} N_{k+1,p-1}(t)
 		\end{eqnarray}
-		と表される．この点列$ \bd{t} = [t_0,t_1,\cdots, t_n] $はノットベクトルと呼ばれ，$ i $に対して単調増加するように選ばれる．一様なB-spline曲線の場合は，$ \bd{t} $は公差$ \Delta t $の等差数列である．
-\section{自由曲面の表現}
-	\subsection{クーンズ曲面}
-		計算機で曲面を定義するための方法として，四辺形の四隅の点と境界曲線（四辺形領域の端点での位置ベクトル，接線ベクトル，ツイストベクトル）によって部分的な曲面を定義し，パッチの連続で曲面全体を表現しようとするものである．しかし，生成される形状との対応が直観的でわかりにくいツイストベクトルを指定する必要があり，隣り合う曲面パッチ間の滑らかな連続性についてなどに問題があった．
-	\subsection{ベジエパッチ}
-		制御点を持つ曲線を曲面に拡張するためにはパラメータ$ u $の制御点$ \bd{C}_i $を別のパラメータ$ v $の関数として表現すれば，制御点
-		$ n $-$ m $次ベジエパッチは，
-			\begin{equation}\label{eq:BezierPatch}
-				S(u,v) = \sum_{i=0}^{n} \sum_{j=0}^{m} B_{i,n}(u) B_{j,m}(v) \bd{P}_{i,j}
-			\end{equation}
-		と定義されている．ここで，$ u,v $は，$ 0\leq u \leq 1 , 0 \leq v \leq 1$で変化する実数のパラメータで，$ \bd{P}_{i,j} $は制御点を表す．また，$ B_{i,n}(u) $はバーンスタインの基底関数である．二つのバーンスタイン基底関数の積の総和は1になる．
+		と表される．この点列$ \bd{t} = [t_0,t_1,\cdots, t_n] $はノットベクトルと呼ばれ，$ t_k, k \in [0,n] $は公差$ \Delta t $の等差数列である．また，ノットベクトルの間隔を非一様にしたものを，NURBS曲線という．
 		
-		ベジエパッチ上の点は，$ \bd{P}_{i,j} $に対する凸包の中に存在することが知られている他，以下の特性を持っている．
-		\begin{itemize}
-			\item アフィン変換（回転移動・平行移動・拡大・縮小・ずれ変換）に対して不変である．
-			\item 境界はベジエ曲線になる．
-			\item 疑似局所変形性（制御点を移動させると，曲線全体にわたって曲面形状は変化するが，その制御点付近の面が一番大きく変化する．
-			\item ベジエパッチ偏導関数の式も，ベジエパッチの式の形で次の通りに書くことができる．
-		\end{itemize}
-		\begin{eqnarray}
-			\frac{\partial S}{\partial u} &=& n \sum_{i=0}^{n-1} \sum_{j=0}^m B_{i,n-1}(u) B_{j,m}(v) \bd{P}_{i,j}\\
-			\frac{\partial S}{\partial v} &=& m \sum_{i=0}^{n} \sum_{j=0}^{m-1} B_{i,n}(u) B_{j,m-1}(v) \bd{P}_{i,j}
-		\end{eqnarray}
-
-		\subsection{B-spline曲面}
 		B-spline曲面はB-spline曲線を拡張したもので，
 		\begin{equation}\label{eq:BsplinePatch}
 			S(u,v) = \sum_{i=0}^n \sum_{j=0}^m N_{i,k}(u) N_{j,k}(v) \bd{P}_{i,j}
- 		\end{equation}
- 		として表される．ここで，$ \bd{P}_{i,j} $は制御点で，$ N_{i,k}(u) $は基底関数で，DeDoorアルゴリズムにより
- 		求められる．
- 		B-spline曲面に関する特徴は，以下にまとめられる．
- 		\begin{itemize}
- 			\item 凸閉包性（曲面の凸閉包は，$ \bd{P} $からなる凸包になる）
- 			\item 局所性（ベジエ曲線ととこなり，制御点の移動は曲線の全体形状に影響を及ぼさない）
- 			\item 連続性（多重度を$ k $とすると，$ N_{i,p}(t) $は$ C^{p-k} $連続である．
- 		\end{itemize}
- \subsection{曲線の内在的性質}
- 	3次元ユークリッド空間における曲線は，任意のパラメータ$ t $を用いて$ \bd{r}(t) = [x(t),\;y(t),\;z(t)] $と表される．ある区間$ [t_{\mathrm{init}},t_{\mathrm{init}}] $に対して，曲線の長さを表す弧長$ s $は以下のように求められる．
+		\end{equation}
+		として表される．ここで，$ \bd{P}_{i,j} $は制御点で，$ N_{i,k}(u) $は基底関数で，DeDoorアルゴリズムにより
+		求められる．
+		B-spline曲面に関する特徴は，以下にまとめられる．
+		\begin{itemize}
+			\item 凸閉包性（曲面の凸閉包は，$ \bd{P} $からなる凸包になる）
+			\item 局所性（ベジエ曲線ととこなり，制御点の移動は曲線の全体形状に影響を及ぼさない）
+			\item 連続性（多重度を$ k $とすると，$ N_{i,p}(t) $は$ C^{p-k} $連続である．
+		\end{itemize}
+		
+ \subsection{曲線と曲面の微分幾何学}
+ 	本章では，曲線と曲面の微分幾何学について述べる．3次元ユークリッド空間における曲線は，任意のパラメータ$ t $を用いて$ \bd{r}(t) \in \mathbb{R}^3 $と表される．ある区間$ [t_{\mathrm{init}},t_{\mathrm{end}}] $に対して，曲線の長さを表す弧長$ s $は以下のように求められる．
  	
  	\begin{equation}\label{eq:def_arclength}
- 		s = \int_{t_{\mathrm{init}}}^{t_{\mathrm{init}}} \left| \frac{d \bd{r}}{dt} \right| dt
+ 		s = \int_{t_{\mathrm{init}}}^{t_{\mathrm{end}}} \left| \frac{d \bd{r}}{dt} \right| dt
  	\end{equation}
 	弧長$ s $は，座標系の取り方やパラメータの取り方に問わず一定である性質を持っており，以後では曲線のパラメータには弧長パラメータをとる．また，以後ことわりがない限り，$ s $に関する微分をプライム記号で表現する．次に，この曲線の各点ごとに局所座標系$\bd{e} =  \{ \bd{e}_1,\; \bd{e}_2,\; \bd{e}_3\} $を設定する．ただし，$ \bd{e}_i $は正規直交基底である．この時，各基底$ \bd{e}_i $の微小変化量$ \delta \bd{e}_i  $は，適当な重み$ \omega_{i,j} $を用いた基底の重みつき線形和で表現できることから
 	\begin{equation}\label{eq:delta_e_i_eq}
@@ -128,11 +115,9 @@
  	このように$ \bd{\omega} = [\omega_{1,2},\; \omega_{2,3},\; \omega_{3,1}] $を各軸回りの回転率と解釈し，$ \bd{e}_3 = \bd{r}'$と定めた局所座標系$ \bd{e}$を物体標構と名付ける．以後では，この物体標構を表す$ \bd{e} $を明確に区別するため，各基底を$ \xiv,\etav,\zetav $と表現し，各軸周りの回転率を$ \omega_{\xi},\omega_{\eta},\omega_{\zeta} $と表記する．
  	
  	%2.1節で述べた手法は，制御点を編集することにより直接形状を操作できる点がCADにおいては非常に有用であったため，広く用いられている．しかし，可展面の数学的定義はガウス曲率が$ 0 $であるという条件であった．
- 	
- 	
- 	物体標構とフレネ・セレの関係をFig.Xに示す．次に，曲線の曲率$ \kappa $および捩率$ \tau $と，各軸の回転率$ \omega_{\xi},\omega_{\eta},\omega_{\zeta} $の関係式について述べる．この2つの標構は，基底のうち$ \zetav$ と$\bd{t} $は常に同じ向きではあるが，他の基底は同じ向きであるとは限らない．そのため，Fig.Xに示すように$ \xiv $と$ \bd{n} $のなす角度を$ \beta $と置く．こうすると，$ \bd{n},\bd{b}$はそれぞれ$ \bd{n} = \xiv \cos \beta + \etav \sin \beta,\bd{b} = -\xiv \sin \beta + \etav \cos \beta $と表現できる．これをフレネ・セレの式$ \bd{t}' = \kappa \bd{n} $に代入すれば，
+ 	物体標構とフレネ・セレの関係をFig.Xに示す．次に，曲線の曲率$ \kappa $および捩率$ \tau $と，各軸の回転率$ \omega_{\xi},\omega_{\eta},\omega_{\zeta} $の関係式について述べる．この2つの標構は，基底のうち$ \zetav$ と$\bd{t} $は常に同じ向きではあるが，他の基底は同じ向きであるとは限らない．そのため，Fig.Xに示すように$ \xiv $と$ \bd{n} $のなす角度を$ \chi $と置く．こうすると，$ \bd{n},\bd{b}$はそれぞれ$ \bd{n} = \xiv \cos \chi + \etav \sin \chi,\bd{b} = -\xiv \sin \chi + \etav \cos \chi $と表現できる．これをフレネ・セレの式$ \bd{t}' = \kappa \bd{n} $に代入すれば，
  	\begin{equation}\label{eq:t_dot_eq}
- 		\bd{t}' = \kappa \left( \xiv \cos \beta + \etav \sin \beta \right)
+ 		\bd{t}' = \kappa \left( \xiv \cos \chi + \etav \sin \chi \right)
  	\end{equation}
  	を得る．$ \zetav' = \bd{t}' $および$ \xiv,\etav,\zetav $が直交基底であることから$ \kappa $は
  	\begin{equation}\label{eq:kappa_and_omega}
@@ -140,12 +125,12 @@
  	\end{equation}
  	と求めることができ，$ \beta $は
  	\begin{equation}\label{eq:beta_and_omega}
- 		\beta = \tan^{-1} \left( -\frac{\omega_{\xi}}{\omega_{\eta}} \right)
+ 		\chi = \tan^{-1} \left( -\frac{\omega_{\xi}}{\omega_{\eta}} \right)
  	\end{equation}
- 	となる．$ \bd{b} = -\xiv \sin \beta + \etav \cos \beta$の両辺を微分すると$ \bd{b}' = -(\beta' + \omega_{\zeta})\bd{n} $となることから，
+ 	となる．$ \bd{b} = -\xiv \sin \chi + \etav \cos \chi$の両辺を微分すると$ \bd{b}' = -(\beta' + \omega_{\zeta})\bd{n} $となることから，
  	\begin{equation}\label{eq:tau_and_omega}
- 		\tau = \beta' + \omega_{\zeta} = \frac{\omega_{\xi} \omega_{\eta}' - \omega_{\xi}' \omega_{\eta}}{\kappa^2} + \omega_{\zeta} 
+ 		\tau = \chi' + \omega_{\zeta} = \frac{\omega_{\xi} \omega_{\eta}' - \omega_{\xi}' \omega_{\eta}}{\kappa^2} + \omega_{\zeta} 
  	\end{equation}
- 	が成り立つ．式\ref{eq:kappa_and_omega},\ref{eq:tau_and_omega}から分かる通り，フレネ・セレよりも，物体標構の方がより表現力の高いモデルだということが分かる．そのため，本研究では，物体標構を用いて曲線を表現する．
+ 	が成り立つ．%式\ref{eq:kappa_and_omega},\ref{eq:tau_and_omega}から分かる通り，フレネ・セレよりも，物体標構の方がより表現力の高いモデルだということが分かる．そのため，本研究では，物体標構を用いて曲線を表現する
  	
- 	次に曲面論を用いた曲面表現について述べる．
+ 	次に曲面の微分幾何学について述べる．曲線と同じように，ユークリッド空間$ \mathbb{R}^3 $上で，曲面はパラメータ$ u,v $によって$ \bd{p}(u,v) $と表現できる．
